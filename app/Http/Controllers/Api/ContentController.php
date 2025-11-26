@@ -162,7 +162,8 @@ class ContentController extends Controller
             }
             
             // Merge data lama dengan data baru (data baru prioritas)
-            $mergedData = array_merge_recursive($existingData, $data);
+            // Gunakan array_replace_recursive agar value baru menimpa value lama
+            $mergedData = array_replace_recursive($existingData, $data);
             
             // Pastikan metadata ada dan lengkap
             if (!isset($mergedData['metadata']) || !is_array($mergedData['metadata'])) {

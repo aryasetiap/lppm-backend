@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'wordpress' => [
+        'site_url' => env('WP_BASE_URL', 'https://lppm.unila.ac.id'),
+        'connection' => env('WP_DB_CONNECTION', 'wordpress'),
+    ],
+
 ];
