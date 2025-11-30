@@ -1,142 +1,112 @@
 {
-    "meta": {
-        "code": 200,
-        "status": "success",
-        "message": "Data berhasil diambil"
-    },
-    "data": {
-        "metadata": {
-            "last_updated": "2024-11-20",
-            "data_source": "LPPM Unila Database",
-            "description": "Data profil LPPM Universitas Lampung"
-        },
-        "pimpinan": {
-            "kepala_lppm": {
-                "nama": "Dr. Eng. Ir. Dikpride Despa, S.T., M.T., IPM, ASEAN Eng.",
-                "foto": "/images/pimpinan/kepala-lppm.jpg",
-                "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+LPPM",
-                "jabatan": "Kepala LPPM",
-                "periode": "2024-2029"
-            },
-            "sekretaris_lppm": {
-                "nama": "Suparman Arif, S.Pd., M.Pd.",
-                "foto": "/images/pimpinan/sekretaris-lppm.jpg",
-                "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Sekretaris+LPPM",
-                "jabatan": "Sekretaris LPPM",
-                "periode": "2024-2029"
-            }
-        },
-        "visi_misi": {
-            "visi": "Menjadi lembaga penelitian dan pengabdian kepada masyarakat yang unggul, inovatif, dan berdaya saing global dalam mendukung pengembangan ilmu pengetahuan, teknologi, dan seni untuk kesejahteraan masyarakat.",
-            "misi": [
-                {
-                    "id": 1,
-                    "item": "Meningkatkan kualitas dan kuantitas penelitian yang relevan dengan kebutuhan pembangunan nasional dan global."
-                },
-                {
-                    "id": 2,
-                    "item": "Mengembangkan inovasi dan temu karya yang dapat dipatenkan dan dioptimalkan pemanfaatannya untuk kesejahteraan masyarakat."
-                },
-                {
-                    "id": 3,
-                    "item": "Menyelenggarakan pengabdian kepada masyarakat yang berbasis hasil penelitian dan kearifan lokal."
-                },
-                {
-                    "id": 4,
-                    "item": "Memperkuat kerjasama institusional dengan pemerintah, industri, dan masyarakat dalam rangka triple helix."
-                },
-                {
-                    "id": 5,
-                    "item": "Mengembangkan sistem pengelolaan penelitian dan pengabdian yang transparan, akuntabel, dan berkualitas."
-                }
-            ]
-        },
-        "tugas_fungsi": {
-            "tugas": [
-                {
-                    "id": 1,
-                    "item": "Melaksanakan dan mengkoordinasikan pelaksanaan kebijakan di bidang penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 2,
-                    "item": "Melakukan pembinaan dan pengembangan bidang penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 3,
-                    "item": "Menyusun rencana strategis (renstra) di bidang penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 4,
-                    "item": "Melakukan monitoring, evaluasi, dan pelaporan kegiatan penelitian dan pengabdian kepada masyarakat."
-                }
-            ],
-            "fungsi": [
-                {
-                    "id": 1,
-                    "item": "Perencanaan, pengembangan, dan pelaksanaan penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 2,
-                    "item": "Pembinaan dan pengembangan sumber daya manusia di bidang penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 3,
-                    "item": "Pengelolaan dana dan sarana prasarana penunjang kegiatan penelitian dan pengabdian kepada masyarakat."
-                },
-                {
-                    "id": 4,
-                    "item": "Pengembangan jaringan kerjasama institusional dalam dan luar negeri."
-                },
-                {
-                    "id": 5,
-                    "item": "Publikasi dan diseminasi hasil penelitian dan pengabdian kepada masyarakat."
-                }
-            ]
-        },
-        "struktur_organisasi": {
-            "gambar_struktur": "/images/struktur/struktur-organisasi.jpg",
-            "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+LPPM",
-            "deskripsi": "Struktur Organisasi LPPM Universitas Lampung mencakup unsur pimpinan, pelaksana harian, bidang-bidang fungsional, dan unit pendukung yang bekerja secara sinergis untuk mencapai tujuan lembaga."
-        }
-    },
     "metadata": {
-        "last_updated": "2025-11-22",
-        "data_source": [
-            "LPPM Unila Database",
-            "LPPM Unila Database"
-        ],
-        "description": [
-            "Profil lengkap LPPM Universitas Lampung",
-            null
-        ]
+      "last_updated": "2024-11-20",
+      "data_source": "LPPM Unila Database",
+      "description": "Data profil LPPM Universitas Lampung"
     },
     "pimpinan": {
-        "kepala_lppm": {
-            "nama": "Dr. Eng. Ir. Dikpride Despa, S.T., M.T., IPM, ASEAN Eng.",
-            "foto": null,
-            "placeholder": null,
-            "jabatan": null,
-            "periode": null
-        },
-        "sekretaris_lppm": {
-            "nama": null,
-            "foto": null,
-            "placeholder": null,
-            "jabatan": null,
-            "periode": null
-        }
+      "kepala_lppm": {
+        "nama": "Dr. Eng. Ir. Dikpride Despa, S.T., M.T., IPM, ASEAN Eng.",
+        "foto": "/images/pimpinan/kepala-lppm.jpg",
+        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+LPPM",
+        "jabatan": "Kepala LPPM Unila",
+        "periode": "2024-2029"
+      },
+      "sekretaris_lppm": {
+        "nama": "Suparman Arif, S.Pd., M.Pd.",
+        "foto": "/images/pimpinan/sekretaris-lppm.jpeg",
+        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Sekretaris+LPPM",
+        "jabatan": "Sekretaris LPPM Unila",
+        "periode": "2024-2029"
+      }
     },
     "visi_misi": {
-        "visi": null,
-        "misi": []
+      "visi": "Menjadi Lembaga Riset dan Pengabdian kepada Masyarakat yang Unggul, Inovatif, dan Kolaboratif dalam Mendukung Unila sebagai Universitas Berkelas Dunia yang Berbasis Keberlanjutan dan Nilai Lokal.",
+      "misi": [
+        {
+          "id": 1,
+          "item": "Mengembangkan budaya riset unggulan dan kolaboratif"
+        },
+        {
+          "id": 2,
+          "item": "Mendorong pengabdian kepada masyarakat berbasis hasil riset dan teknologi tepat guna"
+        },
+        {
+          "id": 3,
+          "item": "Memperkuat tata kelola riset dan pengabdian yang adaptif, profesional, dan berbasis teknologi digital"
+        },
+        {
+          "id": 4,
+          "item": "Meningkatkan kemitraan strategis nasional dan internasional"
+        },
+        {
+          "id": 5,
+          "item": "Mengintegrasikan nilai-nilai kearifan lokal Lampung dalam kegiatan penelitian dan pengabdian"
+        },
+        {
+          "id": 6,
+          "item": "Mendorong pengembangan ekosistem inovasi dan kewirausahaan berbasis riset"
+        }
+      ]
     },
     "tugas_fungsi": {
-        "tugas": [],
-        "fungsi": []
+      "tugas": [
+        {
+          "id": 1,
+          "item": "Melaksanakan koordinasi kegiatan penelitian dan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 2,
+          "item": "Melaksanakan pelaksanaan (implementasi) kegiatan penelitian dan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 3,
+          "item": "Melaksanakan pemantauan kegiatan penelitian dan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 4,
+          "item": "Melaksanakan evaluasi kegiatan penelitian dan pengabdian kepada masyarakat."
+        }
+      ],
+      "fungsi": [
+        {
+          "id": 1,
+          "item": "Penyusunan rencana, program, dan anggaran LPPM."
+        },
+        {
+          "id": 2,
+          "item": "Pelaksanaan penelitian ilmiah, baik penelitian murni maupun terapan."
+        },
+        {
+          "id": 3,
+          "item": "Pelaksanaan kegiatan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 4,
+          "item": "Koordinasi pelaksanaan kegiatan penelitian dan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 5,
+          "item": "Publikasi hasil penelitian dan hasil pengabdian kepada masyarakat."
+        },
+        {
+          "id": 6,
+          "item": "Pelaksanaan kerja sama dalam bidang penelitian dan pengabdian kepada masyarakat dengan perguruan tinggi dan/atau institusi lain, baik dalam negeri maupun luar negeri."
+        },
+        {
+          "id": 7,
+          "item": "Pemantauan dan evaluasi pelaksanaan kegiatan penelitian dan pengabdian kepada masyarakat."
+        },
+        {
+          "id": 8,
+          "item": "Pelaksanaan urusan administrasi LPPM."
+        }
+      ]
     },
     "struktur_organisasi": {
-        "gambar_struktur": null,
-        "gambar_placeholder": null,
-        "deskripsi": null
+      "gambar_struktur": "/images/struktur/struktur-organisasi.png",
+      "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+LPPM",
+      "deskripsi": ""
     }
-}
+  }
+  

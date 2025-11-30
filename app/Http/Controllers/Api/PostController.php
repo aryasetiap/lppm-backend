@@ -193,7 +193,19 @@ class PostController extends Controller
         // Jika tidak ada gambar, pakai placeholder
         if (!$url) return 'https://placehold.co/600x400?text=No+Image';
 
+        // Jika URL relative (mulai dengan /), tambahkan domain
+        if (strpos($url, '/') === 0 && strpos($url, '//') !== 0) {
+            $url = 'https://lppm.unila.ac.id' . $url;
+        }
+
         // Pastikan URL menggunakan HTTPS agar tidak diblokir browser modern
-        return str_replace('http://', 'https://', $url);
+        $url = str_replace('http://', 'https://', $url);
+
+        // Pastikan URL lengkap (ada http:// atau https://)
+        if (strpos($url, 'http://') !== 0 && strpos($url, 'https://') !== 0) {
+            $url = 'https://lppm.unila.ac.id' . $url;
+        }
+
+        return $url;
     }
 }
