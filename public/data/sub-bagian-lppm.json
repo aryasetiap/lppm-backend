@@ -327,17 +327,17 @@
           },
           "staff": [
             {
-              "nama": "Staff Anggota 1",
-              "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
+              "nama": "Rizkima Akbar Setiawan, S.T., M.T.",
+              "foto": "/images/sub-bagian/puslit-sistem-informasi/staff1.png",
               "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+1",
-              "jabatan": "Anggota Peneliti",
+              "jabatan": "Staff",
               "periode": "2024-2029"
             },
             {
-              "nama": "Staff Anggota 2",
-              "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
+              "nama": "M. Nur Khawarizmi, S.Si., M.T.",
+              "foto": "/images/sub-bagian/puslit-sistem-informasi/staff2.png",
               "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+2",
-              "jabatan": "Anggota Peneliti",
+              "jabatan": "Staff",
               "periode": "2024-2029"
             }
           ]
@@ -497,24 +497,108 @@
           },
           "staff": [
             {
-              "nama": "Staff Administrasi 1",
-              "foto": "",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Admin+1",
-              "jabatan": "Staf Administrasi",
-              "periode": "2024-2029"
-            },
-            {
-              "nama": "Staff Keuangan 1",
-              "foto": "",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Keuangan+1",
-              "jabatan": "Staf Keuangan",
-              "periode": "2024-2029"
-            },
-            {
-              "nama": "Staff Umum 1",
-              "foto": "",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum+1",
+              "nama": "Yusrizal., S.P. MM.",
+              "foto": "/images/sub-bagian/bagian-umum/staff1.jpeg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
               "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Imam Wahyudi",
+              "foto": "/images/sub-bagian/bagian-umum/staff2.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Abi Ilham Yurinza, S.IKom",
+              "foto": "/images/sub-bagian/bagian-umum/staff3.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Resma Nurmei Winda. S.P.",
+              "foto": "/images/sub-bagian/bagian-umum/staff4.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Fertika Dwi Yoswita, S.Pd., M. Pd.",
+              "foto": "/images/sub-bagian/bagian-umum/staff5.jpeg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Titik Ovirosita",
+              "foto": "/images/sub-bagian/bagian-umum/staff6.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Ridawati, S. Sos.",
+              "foto": "/images/sub-bagian/bagian-umum/staff7.jpeg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Sugianto",
+              "foto": "/images/sub-bagian/bagian-umum/staff8.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Rizky Satria S.IP",
+              "foto": "/images/sub-bagian/bagian-umum/staff9.jpeg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Saryanto",
+              "foto": "/images/sub-bagian/bagian-umum/staff10.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "A. Melky Oesman Nawawi, S.I.Kom",
+              "foto": "/images/sub-bagian/bagian-umum/staff11.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Program dan Informasi",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Fitriadi. S.Pd, M.Pd.",
+              "foto": "/images/sub-bagian/bagian-umum/staff12.jpeg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Program dan Informasi",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Ina Iriana, S.S.",
+              "foto": "/images/sub-bagian/bagian-umum/staff13.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Program dan Informasi",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Rosihin Anwar, S.Kom.",
+              "foto": "/images/sub-bagian/bagian-umum/staff14.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Program dan Informasi",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Siti Marbiyah, S.Si.",
+              "foto": "/images/sub-bagian/bagian-umum/staff15.jpg",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+              "jabatan": "Staf Program dan Informasi",
               "periode": "2024-2029"
             }
           ]
