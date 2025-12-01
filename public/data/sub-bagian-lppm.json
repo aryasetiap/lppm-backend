@@ -324,7 +324,23 @@
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Sistem+Informasi",
             "jabatan": "Kepala Pusat Sistem Informasi dan Digitalisasi",
             "periode": "2024-2029"
-          }
+          },
+          "staff": [
+            {
+              "nama": "Staff Anggota 1",
+              "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+1",
+              "jabatan": "Anggota Peneliti",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Staff Anggota 2",
+              "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+2",
+              "jabatan": "Anggota Peneliti",
+              "periode": "2024-2029"
+            }
+          ]
         },
         "profile_singkat": "Pusat yang mengembangkan sistem informasi penelitian, digitalisasi layanan, serta memfasilitasi kolaborasi riset antar peneliti dan institusi.",
         "profil": {
@@ -478,7 +494,30 @@
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Bagian+Umum",
             "jabatan": "Kepala Bagian Umum",
             "periode": "2024-2029"
-          }
+          },
+          "staff": [
+            {
+              "nama": "Staff Administrasi 1",
+              "foto": "",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Admin+1",
+              "jabatan": "Staf Administrasi",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Staff Keuangan 1",
+              "foto": "",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Keuangan+1",
+              "jabatan": "Staf Keuangan",
+              "periode": "2024-2029"
+            },
+            {
+              "nama": "Staff Umum 1",
+              "foto": "",
+              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum+1",
+              "jabatan": "Staf Umum",
+              "periode": "2024-2029"
+            }
+          ]
         },
         "profile_singkat": "Bagian Umum LPPM yang menangani administrasi umum, keuangan, kepegawaian, sarana prasarana, dan layanan pendukung lainnya untuk menunjang operasional LPPM.",
         "profil": {
