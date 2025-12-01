@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ContentController;
 use App\Http\Controllers\Api\PosApController;
 
 // Endpoint Berita
+Route::get('/posts/categories', [PostController::class, 'categories']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 

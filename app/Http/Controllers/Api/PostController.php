@@ -208,4 +208,24 @@ class PostController extends Controller
 
         return $url;
     }
+    /**
+     * MENAMPILKAN DAFTAR KATEGORI
+     * Endpoint: GET /api/posts/categories
+     */
+    public function categories()
+    {
+        $categories = DB::connection('wordpress')
+            ->table('2022_terms as t')
+            ->join('2022_term_taxonomy as tt', 't.term_id', '=', 'tt.term_id')
+            ->where('tt.taxonomy', 'category')
+            ->where('tt.count', '>', 0) // Hanya kategori yang ada isinya
+            ->select('t.term_id', 't.name', 't.slug')
+            ->orderBy('t.name', 'asc')
+            ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $categories
+        ]);
+    }
 }
