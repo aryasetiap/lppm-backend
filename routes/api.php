@@ -24,3 +24,6 @@ Route::middleware('auth.admin')->group(function () {
 // POS-AP public endpoints
 Route::get('/pos-ap/downloads', [PosApController::class, 'downloads']);
 Route::get('/pos-ap/categories', [PosApController::class, 'categories']);
+
+// General Documents endpoint
+Route::get('/documents', [\App\Http\Controllers\Api\DocumentController::class, 'index']);
