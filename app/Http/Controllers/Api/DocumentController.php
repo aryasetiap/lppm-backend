@@ -83,10 +83,12 @@ class DocumentController extends Controller
                 $query->where('post_title', 'like', '%' . $search . '%');
             }
 
-            $query->orderByDesc('post_date')
-                  ->limit($limit);
+            $query->orderByDesc('post_date');
 
-            $items = $query->get()->map(function ($item) use ($siteUrl) {
+            // Gunakan paginate() dari Laravel
+            $paginator = $query->paginate($limit);
+
+            $items = $paginator->getCollection()->map(function ($item) use ($siteUrl) {
                 // Fix URL
                 $url = $item->guid;
                 if (strpos($url, 'http') !== 0) {
@@ -120,6 +122,14 @@ class DocumentController extends Controller
                     'status' => 'success',
                     'message' => 'Daftar dokumen berhasil diambil',
                     'count' => $items->count(),
+                    'pagination' => [
+                        'total' => $paginator->total(),
+                        'per_page' => $paginator->perPage(),
+                        'current_page' => $paginator->currentPage(),
+                        'last_page' => $paginator->lastPage(),
+                        'next_page_url' => $paginator->nextPageUrl(),
+                        'prev_page_url' => $paginator->previousPageUrl(),
+                    ]
                 ],
                 'data' => $items,
             ]);
