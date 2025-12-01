@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2024-11-20",
+    "last_updated": "2025-12-01",
     "data_source": "LPPM Unila Database",
     "description": "Data lengkap sub bagian dan unit di LPPM Universitas Lampung"
   },
@@ -283,8 +283,8 @@
         "kategori": "PUSLIT",
         "pimpinan": {
           "ketua": {
-            "nama": "Dr. Nur Aisyah, S.TP., M.Si.",
-            "foto": "/images/sub-bagian/unila-halal-center/ketua.jpg",
+            "nama": "Dr. Dewi Sartika, S.T.P., M.Si.",
+            "foto": "/images/sub-bagian/unila-halal-center/ketua.png",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Unila+Halal+Center",
             "jabatan": "Kepala Lembaga Pemeriksa Halal",
             "periode": "2024-2029"
