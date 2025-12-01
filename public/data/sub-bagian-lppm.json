@@ -7,7 +7,7 @@
   "sub_bagian": {
     "pui": {
       "pusat-unggulan-ipteks-anggrek-kopi-lada-kako-dan-pengembangan-komoditas-strategis-dan-agroindustri-lampung": {
-        "nama": "Pusat Unggulan Ipteks Anggrek, Kopi, Lada, Kako dan Pengembangan Komoditas Strategis dan Agroindustri Lampung",
+        "nama": "Pusat Unggulan Ipteks (PUI) Anggrek, Kopi, Lada, Kako dan Pengembangan Komoditas Strategis dan Agroindustri Lampung",
         "singkatan": "PUI Anggrek dan Kopi",
         "kategori": "PUI",
         "pimpinan": {
@@ -28,35 +28,21 @@
             "Memfasilitasi hilirisasi hasil penelitian melalui pengembangan agroindustri",
             "Membangun jejaring kerjasama nasional dan internasional untuk pengembangan ipteks",
             "Memberdayakan masyarakat melalui diseminasi teknologi dan edukasi pertanian"
-          ],
-          "program_unggulan": [
-            "Pengembangan Varietas Unggul Anggrek Spesies Lampung",
-            "Inovasi Teknologi Pengolahan Kopi Berbasis Teknologi 4.0",
-            "Pengembangan Klaster Agroindustri Komoditas Strategis",
-            "Program Inkubasi UMKM Berbasis Komoditas Lokal",
-            "Konservasi dan Pengembangan Plasma Nutfah Anggrek Langka"
-          ],
-          "prestasi": [
-            "Juara 1 Inovasi Teknologi Pertanian Nasional 2023",
-            "Penghargaan PUI Terbaik Kementerian Ristek BRIN 2022",
-            "12 Hak Paten Teknologi Budidaya dan Pengolahan Hasil",
-            "Juara Umum Pameran Agroinovasi tingkat ASEAN 2023",
-            "20+ Publikasi Internasional Bereputasi Q1-Q2"
-          ],
-          "keunggulan": [
-            "Laboratorium Riset Terpadu berstandar Internasional",
-            "Koleksi Plasma Nutfah Anggrek Terlengkap di Indonesia",
-            "Jaringan Mitra Industri dan Exportir Nasional",
-            "Tim Riset Berpengalaman dan Sertifikat Kompetensi",
-            "Teknologi Budidaya Ramah Lingkungan dan Organik"
           ]
         },
         "tugas_fungsi": [
-          "Melaksanakan penelitian unggulan di bidang budi daya anggrek dan kopi",
-          "Mengembangkan varietas unggul dan teknologi budidaya inovatif",
-          "Melakukan pengembangan agroindustri berbasis komoditas lokal",
-          "Membangun jejaring kerjasama nasional dan internasional",
-          "Melakukan diseminasi hasil penelitian dan teknologi kepada masyarakat"
+          "Melaksanakan pelatihan dan workshop peyusunan dokumen akreditasi internasional program studi.",
+          "Melakukan pendampingan penyusunan, simulasi, dan visitasi akreditasi internasional program studi.",
+          "Melakukan pendampingan surveillance/banding dari hasil draft acreditation report.",
+          "Menjadi pusat riset dan pengembangan teknologi budidaya dan pemuliaan anggrek dan Komoditas tanaman spesifik Propinsi Lampung.",
+          "Mendorong komersialisasi produk berbasis bioteknologi anggrek dan Komoditas tanaman spesifik Propinsi Lampung lainnnya.",
+          "Mengembangkan kerja sama dengan petani dan industri.",
+          "Meneliti dan mengembangkan teknologi peningkatan produktivitas dan kualitas komoditas strategis seperti kopi, lada, kakao, tebu, dan sawit berbasis pertanian presisi.",
+          "Mengembangkan inovasi teknologi pascapanen dan hilirisasi produk agroindustri untuk meningkatkan nilai tambah dan daya saing ekspor.",
+          "Mengkaji dampak perubahan iklim dan volatilitas harga terhadap komoditas perkebunan, serta merumuskan strategi mitigasi berbasis teknologi adaptif.",
+          "Meningkatkan efisiensi rantai pasok dan distribusi produk agroindustri melalui digitalisasi dan pemanfaatan teknologi berbasis IoT, big data analytics, dan blockchain.",
+          "Membangun kolaborasi strategis dengan petani, eksportir, industri, dan lembaga penelitian dalam penguatan standar produk berkelanjutan dan penerapan sertifikasi internasional.",
+          "Mendukung pengembangan ekosistem agroindustri berbasis inovasi dan keberlanjutan, termasuk model pertanian regeneratif dan agroforestry yang berdampak positif bagi lingkungan dan ekonomi petani."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/pui-anggrek-kopi/struktur-organisasi.jpg",
@@ -66,7 +52,7 @@
     },
     "puslit": {
       "pusat-penelitian-kuliah-kerja-nyata-kkn": {
-        "nama": "Pusat Penelitian Kuliah Kerja Nyata (KKN)",
+        "nama": "Pusat Penelitian KKN",
         "singkatan": "Puslit KKN",
         "kategori": "PUSLIT",
         "pimpinan": {
@@ -87,35 +73,13 @@
             "Membangun jejaring mitra KKN yang luas dan berkualitas",
             "Melakukan monitoring dan evaluasi berkelanjutan untuk peningkatan kualitas",
             "Mendorong inovasi program KKN berbasis digital dan teknologi tepat guna"
-          ],
-          "program_unggulan": [
-            "KKN Tematik Desa Berdikari dan Digital",
-            "KKN Kebangsaan Antar Provinsi dan Pulau",
-            "KKN Internasional dan Student Exchange",
-            "Program KKN Inovasi Sosial dan Teknologi",
-            "KKN Kolaborasi Dunia Usaha dan Industri"
-          ],
-          "prestasi": [
-            "Juara 1 Program KKN Terinovatif Nasional 2023",
-            "Penghargaan KKN Terbaik Kopertis Wilayah II 2022-2023",
-            "500+ Desa Mitra Aktif di Seluruh Indonesia",
-            "10.000+ Mahasiswa Berpartisipasi Setiap Tahun",
-            "Program KKN Digital Pertama di Indonesia"
-          ],
-          "keunggulan": [
-            "Jaringan Mitra Desa Terluas di Indonesia",
-            "Program KKN Tematik Terlengkap dan Beragam",
-            "Digitalisasi Manajemen KKN Terintegrasi",
-            "Tim Pengabdian Berpengalaman dan Sertifikat",
-            "Kerjasama International dengan 10+ Universitas"
           ]
         },
         "tugas_fungsi": [
-          "Menyusun perencanaan dan pengembangan program KKN",
-          "Melakukan koordinasi pelaksanaan KKN reguler dan tematik",
-          "Membangun jejaring dengan mitra KKN di berbagai daerah",
-          "Melakukan monitoring dan evaluasi pelaksanaan KKN",
-          "Mengembangkan inovasi program KKN berbasis kebutuhan masyarakat"
+          "Mengelola program KKN tematik berbasis riset dan kebutuhan masyarakat.",
+          "Meningkatkan dampak sosial dan ekonomi melalui program KKN berbasis pemberdayaan.",
+          "Menjalin kolaborasi dengan pemerintah dan sektor swasta dalam implementasi program.",
+          "Melaksanakan program program KKN Nasional, Kebangsaan, internasional dan Program KKN lainnya."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-kkn/struktur-organisasi.jpg",
@@ -123,8 +87,8 @@
         }
       },
       "pusat-penelitian-hak-kekayaan-intelektual-hki-dan-paten": {
-        "nama": "Pusat Penelitian Hak Kekayaan Intelektual (HKI) dan Paten",
-        "singkatan": "Puslit HKI dan Paten",
+        "nama": "Pusat Penelitian HKI dan PATEN",
+        "singkatan": "Puslit HKI dan PATEN",
         "kategori": "PUSLIT",
         "pimpinan": {
           "ketua": {
@@ -144,35 +108,13 @@
             "Mengembangkan sistem manajemen HKI institusional yang terintegrasi",
             "Melakukan sosialisasi dan edukasi perlindungan HKI kepada sivitas akademika",
             "Membangun kerjasama dengan institusi HKI nasional dan internasional"
-          ],
-          "program_unggulan": [
-            "Program Paten Unila 1000 Tahun 2025",
-            "Layanan HKI Cepat Satu Hari",
-            "Inkubasi Bisnis Berbasis HKI",
-            "Program Edukasi HKI Mahasiswa",
-            "Klinik HKI Konsultasi Gratis"
-          ],
-          "prestasi": [
-            "Juara 1 Layanan HKI Terbaik PTN se-Indonesia 2023",
-            "100+ Paten Terdaftar dalam 3 Tahun Terakhir",
-            "500+ HKI Terproteksi Berbagai Kategori",
-            "Penghargaan HKI Terinovatif dari Kemenkumham 2022",
-            "15+ Kerjasama MoU dengan Institusi HKI Internasional"
-          ],
-          "keunggulan": [
-            "Tim Konsultan HKI Berpengalaman dan Tersertifikasi",
-            "Sistem Pelayanan HKI Digital Terintegrasi",
-            "Jaringan Partner Kantor HKI Terpercaya",
-            "Layanan One Stop Service HKI Terlengkap",
-            "Database HKI Institusional Terupdate"
           ]
         },
         "tugas_fungsi": [
-          "Memberikan layanan konsultasi HKI dan paten kepada sivitas akademika",
-          "Melakukan fasilitasi pendaftaran paten dan HKI lainnya",
-          "Mengembangkan sistem manajemen HKI institusional",
-          "Melakukan sosialisasi dan edukasi tentang perlindungan HKI",
-          "Membangun kerjasama dengan lembaga HKI nasional dan internasional"
+          "Meningkatkan kesadaran akademisi terkait perlindungan HKI, termasuk paten, hak cipta, dan merek dagang.",
+          "Mendampingi proses pendaftaran HKI untuk inovasi yang dihasilkan civitas akademika.",
+          "Menjalin kerja sama dengan industri untuk komersialisasi hasil riset.",
+          "Mengelola dan mengembangkan kebijakan HKI di lingkungan universitas."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-haki-paten/struktur-organisasi.jpg",
@@ -180,8 +122,8 @@
         }
       },
       "pusat-penelitian-bencana-lingkungan-hidup-dan-sumber-daya-alam": {
-        "nama": "Pusat Penelitian Bencana, Lingkungan Hidup dan Sumber Daya Alam",
-        "singkatan": "Puslit BLH SDA",
+        "nama": "Pusat Penelitian Lingkungan Hidup dan Penanggulangan Bencana",
+        "singkatan": "Puslit LHPB",
         "kategori": "PUSLIT",
         "pimpinan": {
           "ketua": {
@@ -201,35 +143,15 @@
             "Melakukan kajian dampak lingkungan dan sosial pembangunan",
             "Memberikan rekomendasi kebijakan pengelolaan lingkungan berkelanjutan",
             "Membangun kapasitas masyarakat dalam pengelolaan sumber daya alam"
-          ],
-          "program_unggulan": [
-            "Early Warning System Bencana Alam Terpadu",
-            "Program Konservasi Hutan Mangrove Lampung",
-            "Sistem Monitoring Kualitas Air Digital",
-            "Program Rehabilitasi DAS Terpadu",
-            "Kampus Hijau dan Carbon Neutral Unila"
-          ],
-          "prestasi": [
-            "Juara 1 Inovasi Mitigasi Bencana Nasional 2023",
-            "Penghargaan Adikarya Pariwisata Berkelanjutan 2022",
-            "50+ Jurnal Internasional Bidang Lingkungan Terbit",
-            "10 Sistem Monitoring Bencana Terinstall di Lampung",
-            "Kerjasama Internasional dengan UNEP dan WWF"
-          ],
-          "keunggulan": [
-            "Laboratorium Lingkungan Terakreditasi KAN",
-            "Sistem Monitoring Bencana Real-time Terintegrasi",
-            "Jaringan Mitra Pemerintah dan NGO Lingkungan",
-            "Tim Riset Ahli Kebencanaan Tersertifikasi",
-            "Database Lingkungan Wilayah Lampung Terlengkap"
           ]
         },
         "tugas_fungsi": [
-          "Melakukan penelitian mitigasi dan adaptasi perubahan iklim",
-          "Mengembangkan sistem monitoring lingkungan dan sumber daya alam",
-          "Melakukan kajian dampak lingkungan dan sosial",
-          "Memberikan rekomendasi kebijakan pengelolaan lingkungan",
-          "Membangun kapasitas masyarakat dalam pengelolaan sumber daya alam"
+          "Melakukan riset dan kajian kebijakan terkait aspek lingkungan hidup, perubahan iklim, dan ketahanan bencana.",
+          "Memantau kinerja keberlanjutan di lingkungan kampus, yang bertujuan untuk meningkatkan kesadaran dan mendorong praktik berkelanjutan di dunia pendidikan.",
+          "Mengembangkan strategi mitigasi dan adaptasi terhadap bencana alam serta degradasi lingkungan, berbasis teknologi dan kebijakan yang inklusif.",
+          "Mendorong advokasi dan pendampingan kebijakan keberlanjutan, bekerja sama dengan pemerintah, industri, dan organisasi masyarakat sipil dalam perumusan kebijakan berbasis sains.",
+          "Menginisiasi proyek-proyek sosial dan teknologi hijau berbasis SDGs, baik di lingkungan kampus maupun di masyarakat luas.",
+          "Menjalin kolaborasi dengan organisasi internasional dan nasional dalam pengembangan inovasi lingkungan dan kebencanaan, serta membuka peluang riset kolaboratif dan pendanaan internasional."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-bencana-lingkungan/struktur-organisasi.jpg",
@@ -243,7 +165,7 @@
         "pimpinan": {
           "ketua": {
             "nama": "Gita Paramita Djausal, S. IP., M. B. A",
-            "foto": "/images/sub-bagian/puslit-kebijakan-publik/ketua.jpg",
+            "foto": "/images/sub-bagian/puslit-kebijakan-publik/ketua.png",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Kebijakan+Publik",
             "jabatan": "Kepala Pusat Studi Kebijakan Publik",
             "periode": "2024-2029"
@@ -258,35 +180,13 @@
             "Mengkaji dinamika sosial budaya dalam konteks pembangunan",
             "Memberikan rekomendasi kebijakan berbasis hasil penelitian",
             "Melakukan publikasi ilmiah dan diseminasi hasil penelitian"
-          ],
-          "program_unggulan": [
-            "Policy Analysis Lab",
-            "Social Impact Assessment Program",
-            "Community Development Initiative",
-            "Public Policy Forum",
-            "Social Innovation Hub"
-          ],
-          "prestasi": [
-            "30+ Policy Brief Diterima Pemerintah Daerah",
-            "Juara 2 Kajian Sosial Terbaik Nasional 2023",
-            "15+ Kerjasama Penelitian dengan Pemerintah",
-            "100+ Publikasi Kebijakan Publik Terbit",
-            "Penghargaan Pengabdian Sosial Terbaik"
-          ],
-          "keunggulan": [
-            "Tim Ahli Kebijakan Publik Berpengalaman",
-            "Jaringan Decision Maker Nasional dan Daerah",
-            "Database Sosial Ekonomi Terlengkap",
-            "Laboratorium Analisis Kebijakan Modern",
-            "Program Pendampingan Masyarakat Terstruktur"
           ]
         },
         "tugas_fungsi": [
-          "Melakukan analisis kebijakan publik dan dampaknya terhadap masyarakat",
-          "Meneliti isu-isu pembangunan ekonomi dan sosial",
-          "Mengkaji dinamika sosial budaya dalam konteks pembangunan",
-          "Memberikan rekomendasi kebijakan berbasis hasil penelitian",
-          "Melakukan publikasi ilmiah dan diseminasi hasil penelitian"
+          "Melakukan kajian berkenaan dengan Kebijakan Publik, Pembangunana dan sosial budaya",
+          "Menganalisis dinamika Kebijakan Publik, Sosial budaya pada era globalisasi dan digitalisasi",
+          "Melakukan riset terkait kebijakan public, pembangunan, budaya lokal dalam konteks modernisasi dan keberlanjutan",
+          "Berkolaborasi dengan pemerintah dalam perumusan kebijakan  publik, Pembangunan dan sosial  budaya"
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-kebijakan-publik/struktur-organisasi.jpg",
@@ -294,7 +194,7 @@
         }
       },
       "pusat-penelitian-publikasi-dan-kerja-sama": {
-        "nama": "Pusat Penelitian Publikasi dan Kerja Sama",
+        "nama": "Pusat Penelitian Publikasi dan Kerjasama",
         "singkatan": "Puslit Publikasi dan Kerjasama",
         "kategori": "PUSLIT",
         "pimpinan": {
@@ -315,38 +215,25 @@
             "Melakukan promosi dan diseminasi hasil penelitian berdampak",
             "Mengelola database publikasi dan kekayaan intelektual terintegrasi",
             "Menyelenggarakan konferensi ilmiah internasional berkualitas"
-          ],
-          "program_unggulan": [
-            "Unila Journal Internationalization Program",
-            "Research Collaboration Network Global",
-            "Scientific Writing Workshop Series",
-            "International Conference Hosting",
-            "Publication Accelerator Program"
-          ],
-          "prestasi": [
-            "SINTA 2 Accredited Journal 2023",
-            "1000+ International Publications per Year",
-            "Juara 1 Jurnal Terbaik Kopertis Wilayah II",
-            "50+ MoU International Research Collaboration",
-            "H-index Unila Tertinggi di Sumatera"
-          ],
-          "keunggulan": [
-            "10+ Jurnal Terakreditasi Nasional dan Internasional",
-            "Editorial Board Ahli Berpengalaman",
-            "Digital Repository Terintegrasi Global",
-            "Publication Support Service 24/7",
-            "Jaringan Publisher Reputasi Internasional"
           ]
         },
         "tugas_fungsi": [
-          "Mengelola publikasi ilmiah dan jurnal institusi",
-          "Membangun jaringan kerjasama penelitian nasional dan internasional",
-          "Melakukan promosi dan diseminasi hasil penelitian",
-          "Mengelola database publikasi dan kekayaan intelektual",
-          "Menyelenggarakan seminar dan konferensi ilmiah"
+          "Mendorong peningkatan kuantitas dan kualitas publikasi ilmiah berbasis riset unggulan.",
+          "Menyediakan layanan pendampingan DOI/TURNITIN.",
+          "Menyediakan layanan pendampingan penulisan dan penyuntingan manuskrip.",
+          "Mengelola jurnal akademik dan memperluas jejaring dengan penerbit ilmiah.",
+          "Meningkatkan publikasi berbasis akses terbuka dan digitalisasi hasil penelitian.",
+          "Mengembangkan teknologi digital berbasis AI, blockchain, dan IoT untuk berbagai sektor.",
+          "Menjalin kerja sama dengan industri dalam pengembangan solusi berbasis Industry 4.0.",
+          "Mengoloa SINTA Score yang mendukung perangkingan dan kluster LPPM secara Nasional.",
+          "Meningkatkan efektivitas strategi komunikasi universitas, baik internal maupun eksternal, guna memperkuat branding institusi serta meningkatkan keterlibatan pemangku kepentingan.",
+          "Mendorong digitalisasi dalam layanan administrasi, termasuk penerapan teknologi informasi terkini dalam pengelolaan data dan proses bisnis UNILA LPPM.",
+          "Memperkuat jejaring dan kerjasama akademik, riset, dan industri, baik di tingkat nasional maupun internasional, guna mendukung program internasionalisasi universitas.",
+          "Memfasilitasi pengembangan program kemitraan strategis dengan lembaga pemerintah, industri, serta organisasi internasional untuk mendukung kolaborasi penelitian, pendidikan, dan inovasi.",
+          "Mengembangkan kebijakan dan standar pengelolaan sistem informasi, komunikasi, dan kerjasama, guna memastikan keberlanjutan dan efektivitas program yang dijalankan."
         ],
         "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-publikasi-kerjasama/struktur-organisasi.jpg",
+          "gambar_struktur": "/images/sub-bagian/puslit-publikasi-kerjasama/struktur-organisasi.png",
           "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Publikasi+dan+Kerjasama"
         }
       },
@@ -357,7 +244,7 @@
         "pimpinan": {
           "ketua": {
             "nama": "Dr. Dewi Sartika, S.T.P., M.Si.",
-            "foto": "/images/sub-bagian/puslit-inkubator-bisnis/ketua.jpg",
+            "foto": "/images/sub-bagian/puslit-inkubator-bisnis/ketua.png",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Inkubator+Bisnis",
             "jabatan": "Kepala Pusat Inkubator Bisnis dan Inovasi",
             "periode": "2024-2029"
@@ -372,35 +259,18 @@
             "Mengembangkan teknologi ketahanan pangan berbasis riset",
             "Memberikan layanan sertifikasi halal dan keamanan pangan",
             "Membangun ekosistem kewirausahaan di perguruan tinggi"
-          ],
-          "program_unggulan": [
-            "Startup Incubation Program 2024",
-            "Food Innovation Hub Lampung",
-            "Halal Certification Fast Track",
-            "Agripreneurship Development Program",
-            "Technology Commercialization Accelerator"
-          ],
-          "prestasi": [
-            "Juara 1 Inkubator Bisnis Terbaik Indonesia 2023",
-            "50+ Startup Berhasil Diinkubasi dan Go-Market",
-            "Penghargaan Halal Terbaik dari MUI 2022",
-            "20+ Produk Inovasi Berhasil Dihilirisasi",
-            "Startup Unila Masuk Top 100 Nasional"
-          ],
-          "keunggulan": [
-            "Co-working Space Modern dan Lengkap",
-            "Jaringan Mentor dan Investor Nasional",
-            "Laboratorium Food Processing Berstandar",
-            "Program Sertifikasi Halal Terakreditasi",
-            "Ekosistem Startup Terintegrasi"
           ]
         },
         "tugas_fungsi": [
-          "Mengelola program inkubasi bisnis dan startup",
-          "Melakukan hilirisasi hasil inovasi penelitian",
-          "Mengembangkan teknologi ketahanan pangan",
-          "Memberikan layanan sertifikasi halal dan keamanan pangan",
-          "Membangun ekosistem kewirausahaan di perguruan tinggi"
+          "Mengembangkan ekosistem inovasi berbasis teknologi dan kewirausahaan.",
+          "Membantu mahasiswa dan dosen dalam inkubasi dan akselerasi startup berbasis riset.",
+          "Mendorong hilirisasi produk inovasi ke industri dan pasar.",
+          "Menyediakan program mentoring bisnis dan akses permodalan.",
+          "Mendukung pemberdayaan masyarakat melalui pengembangan ekonomi kreatif, inovasi sosial, dan diversifikasi produk lokal guna memperkuat daya saing ekonomi.",
+          "Berperan sebagai mitra pemerintah, industri, dan masyarakat lokal dalam menyusun strategi pembangunan ekonomi kreatif, berbasis destinasi unggulan ber-kearifan local dan berkelanjutan.",
+          "Mengembangkan inovasi teknologi pertanian berbasis smart farming untuk mendukung program kemandirian energi.",
+          "Berkolaborasi dengan petani dan UMKM dalam mengembangkan produk pangan inovatif untuk kemandirian pangan.",
+          "Layanan bagi pelaku usaha dan pemerintah dalam merealisasikan upaya jaminan produk halal serta memperkuat ekosistem halal sebagai wujud dari pelaksanaan Tri Dharma perguruan tinggi."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-inkubator-bisnis/struktur-organisasi.jpg",
@@ -429,27 +299,6 @@
             "Meningkatkan kapasitas pelaku usaha melalui edukasi, asistensi, dan pendampingan sertifikasi halal.",
             "Memperluas jejaring kolaborasi dengan regulator, industri, dan komunitas halal.",
             "Menyediakan layanan konsultasi halal terpadu yang transparan dan akuntabel."
-          ],
-          "program_unggulan": [
-            "Layanan pemeriksaan halal terpadu untuk UMKM dan industri pangan.",
-            "Laboratorium pengujian halal berbasis riset inovatif kampus.",
-            "Klinik konsultasi dan pendampingan percepatan sertifikasi halal.",
-            "Pelatihan auditor internal dan penyelia halal berbasis kompetensi.",
-            "Program hilirisasi produk halal hasil inovasi sivitas akademika."
-          ],
-          "prestasi": [
-            "Pendampingan 100+ pelaku usaha memperoleh sertifikat halal.",
-            "Pengembangan protokol pengujian halal berbasis riset kampus.",
-            "Kemitraan strategis dengan BPJPH dan MUI Lampung.",
-            "Penghargaan layanan halal inovatif tingkat regional 2024.",
-            "Kontributor aktif ekosistem kampus halal nasional."
-          ],
-          "keunggulan": [
-            "Auditor halal bersertifikat dan berpengalaman lintas sektor.",
-            "Laboratorium pengujian halal terintegrasi dengan fasilitas LPPM.",
-            "Basis data riset halal dan inovasi produk kampus.",
-            "Pendampingan menyeluruh mulai asesmen, uji hingga rekomendasi.",
-            "Sinergi kuat dengan pusat inkubator bisnis dan hilirisasi inovasi."
           ]
         },
         "tugas_fungsi": [
@@ -465,13 +314,13 @@
         }
       },
       "pusat-penelitian-manajeman-sistem-informasi-komunikasi-digitalisasi-dan-kaloborasi-riset": {
-        "nama": "Pusat Penelitian Manajemen Sistem Informasi, Komunikasi, Digitalisasi dan Kolaborasi Riset",
+        "nama": "Pusat Penelitian Manajeman Sistem Informasi, Komunikasi, Digitalisasi dan Kaloborasi Riset",
         "singkatan": "Puslit Sistem Informasi",
         "kategori": "PUSLIT",
         "pimpinan": {
           "ketua": {
             "nama": "Trisya Septiana, S.T., M.T,",
-            "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.jpg",
+            "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Sistem+Informasi",
             "jabatan": "Kepala Pusat Sistem Informasi dan Digitalisasi",
             "periode": "2024-2029"
@@ -486,35 +335,14 @@
             "Membangun platform kolaborasi riset daring",
             "Menyediakan layanan analisis data penelitian",
             "Melakukan pengembangan sistem informasi manajemen pengetahuan"
-          ],
-          "program_unggulan": [
-            "Research Information System (RIS) Unila",
-            "Digital Research Platform",
-            "Big Data Analytics Lab",
-            "Collaborative Research Network",
-            "Knowledge Management System"
-          ],
-          "prestasi": [
-            "Juara 1 Sistem Informasi Penelitian Terbaik 2023",
-            "100% Layanan Digital Terintegrasi",
-            "Sistem Riset Terakreditasi Nasional",
-            "50+ Platform Digital Dikembangkan",
-            "Zero Downtime System Operation"
-          ],
-          "keunggulan": [
-            "Data Center Terstandar ISO 27001",
-            "Platform Cloud-Based Terintegrasi",
-            "Tim IT Berpengalaman dan Tersertifikasi",
-            "UI/UX Design User-Friendly",
-            "System Security Berlapis"
           ]
         },
         "tugas_fungsi": [
-          "Mengembangkan sistem informasi penelitian terintegrasi",
-          "Melakukan digitalisasi layanan penelitian dan pengabdian",
-          "Membangun platform kolaborasi riset daring",
-          "Menyediakan layanan analisis data penelitian",
-          "Melakukan pengembangan sistem informasi manajemen pengetahuan"
+          "Mengembangkan dan mengelola sistem informasi yang terintegrasi guna meningkatkan efisiensi tata kelola LPPM dalam mendukung one data Unila diantaranya: Website, Silemlit21, Media Sosial LPPM dan sistem Ploting Hibah Penelitian, PkM dan KKN serta sistem informasi Internaal lainnya yang menunjang kinerja di LPPM Unila",
+          "Mengelola sistem Informasi Internal dan eksternal berkenaan dengan hibah penelitian dan Pengabdian yang dikerjasamakan dengan Unila baik dengan kementerian Pendidikan Tinggi dan Ristek (SIBIMA, SIMLIBTABMAS), Kementerian Keuangan (eRISPRO LPDP) dengan Industri diantaranya  BPDPKS dan grand Riset lainnya, BRIN dan Kerjasama lainnya.",
+          "Mengelola data base penelitian, Pengabdian, HKI, Paten ,KKN dan Data lainya yang ada di LPPM Unila guna menunjang kinerja Unila.",
+          "Meningkatkan efektivitas strategi komunikasi LPPM, baik internal maupun eksternal, guna memperkuat branding institusi serta meningkatkan keterlibatan pemangku kepentingan.",
+          "Menyediakan dukungan teknis dan inovasi dalam pengelolaan sistem informasi dan komunikasi, termasuk pengelolaan website, media sosial, serta platform digital lainnya."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-sistem-informasi/struktur-organisasi.jpg",
@@ -522,7 +350,7 @@
         }
       },
       "pusat-penelitian-sd-gs-pengembangan-wilayah-kemaritiman-dan-perdesaan": {
-        "nama": "Pusat Penelitian SDGs, Pengembangan Wilayah, Kemaritiman dan Perdesaan",
+        "nama": "Pusat Penelitian SDGs, Pengembangan Wilayah, Kemaritiman, dan Perdesaan",
         "singkatan": "Puslit SDGs",
         "kategori": "PUSLIT",
         "pimpinan": {
@@ -543,35 +371,18 @@
             "Meneliti isu-isu kemaritiman dan sumber daya pesisir",
             "Memberikan rekomendasi kebijakan pembangunan berkelanjutan",
             "Membangun jejaring mitra SDGs dan pengembangan wilayah"
-          ],
-          "program_unggulan": [
-            "SDGs Research Cluster Indonesia",
-            "Maritime Development Initiative",
-            "Rural Transformation Program",
-            "Climate Action Research Hub",
-            "Sustainable Cities Network"
-          ],
-          "prestasi": [
-            "Juara 1 Penelitian SDGs Terbaik Indonesia 2023",
-            "30+ Proyek SDGs Berhasil Diimplementasikan",
-            "UN SDGs Awards 2022",
-            "100+ Publikasi SDGs Internasional",
-            "Best SDGs Implementation in ASEAN"
-          ],
-          "keunggulan": [
-            "SDGs Research Network Global",
-            "Expert Team SDGs Certified",
-            "Laboratorium Marine Science Terlengkap",
-            "SDGs Database Terintegrasi Nasional",
-            "Partnership with UN Agencies"
           ]
         },
         "tugas_fungsi": [
-          "Melakukan penelitian berbasis SDGs untuk pembangunan berkelanjutan",
-          "Mengembangkan model pengembangan wilayah dan perdesaan",
-          "Meneliti isu-isu kemaritiman dan sumber daya pesisir",
-          "Memberikan rekomendasi kebijakan pembangunan berkelanjutan",
-          "Membangun jejaling mitra SDGs dan pengembangan wilayah"
+          "Menginisiasi proyek-proyek sosial dan teknologi hijau berbasis SDGs, baik di lingkungan kampus maupun di masyarakat luas.",
+          "Melakukan riset dan kajian kebijakan terkait pencapaian SDGs.",
+          "Mengintegrasikan prinsip SDGs dalam kurikulum, penelitian, dan pengabdian kepada masyarakat, guna memperkuat peran akademik dalam pembangunan berkelanjutan.",
+          "Memantau dan meng udpadte  UI Green Metric ",
+          "Mendorong advokasi dan pendampingan kebijakan keberlanjutan khusunya berkaitan denngan SDGs bekerja sama dengan pemerintah, industri, dan organisasi masyarakat sipil dalam perumusan kebijakan berbasis sains.",
+          "Menjalin kolaborasi dengan organisasi internasional dan nasional dalam pengembangan inovasi SDG",
+          "Melakukan riset berbasis kebijakan terkait pembangunan wilayah, pengelolaan sumber daya maritim dan perdesaan.",
+          "Mengembangkan inovasi teknologi untuk meningkatkan produktivitas sektor kelautan, perikanan dan wilayah pedesaan.",
+          "Menganalisis dan merancang strategi perencanaan tata ruang wilayah yang berkelanjutan, khususnya untuk kawasan pesisir, pulau-pulau kecil, dan perdesaan."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-sdgs/struktur-organisasi.jpg",
@@ -585,7 +396,7 @@
         "pimpinan": {
           "ketua": {
             "nama": "Khairudin, S.T., M.T., PhD Eng",
-            "foto": "/images/sub-bagian/puslit-energi-material/ketua.jpg",
+            "foto": "/images/sub-bagian/puslit-energi-material/ketua.jpeg",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Energi+dan+Material",
             "jabatan": "Kepala Pusat Energi dan Material Maju",
             "periode": "2024-2029"
@@ -600,35 +411,15 @@
             "Meneliti material maju untuk berbagai aplikasi",
             "Membangun prototipe energi berbasis lokal",
             "Kerjasama industri untuk hilirisasi teknologi energi"
-          ],
-          "program_unggulan": [
-            "Renewable Energy Innovation Lab",
-            "Smart Grid Technology Development",
-            "Advanced Materials Research Center",
-            "Energy Storage Solutions",
-            "Green Technology Accelerator"
-          ],
-          "prestasi": [
-            "Juara 1 Inovasi Energi Terbarukan 2023",
-            "20+ Paten Teknologi Energi Terdaftar",
-            "Energy Lab Terakreditasi Internasional",
-            "100+ Publikasi Energi Terindeks Scopus",
-            "Industry Partnership Awards 2022"
-          ],
-          "keunggulan": [
-            "Energy Lab Berstandar Internasional",
-            "Tim Peneliti Ahli Energi Berpengalaman",
-            "Material Testing Equipment Modern",
-            "Jaringan Industri Energy Nasional",
-            "Prototype Development Facility"
           ]
         },
         "tugas_fungsi": [
-          "Mengembangkan teknologi energi terbarukan dan efisiensi energi",
-          "Melakukan penelitian sistem kelistrikan dan smart grid",
-          "Meneliti material maju untuk berbagai aplikasi",
-          "Membangun prototipe energi berbasis lokal",
-          "Kerjasama industri untuk hilirisasi teknologi energi"
+          "Meneliti dan mengembangkan potensi sumber energi baru dan terbarukan, guna mengurangi ketergantungan pada energi fosil dan meningkatkan ketahanan energi dan kelistrikan.",
+          "Mengembangkan teknologi hijau berbasis energi baru terbarukan.",
+          "Mengembangkan inovasi material maju untuk meningkatkan efisiensi energi, tkelistrikan ermasuk material untuk baterai, penyimpanan hidrogen, dan fotovoltaik berkinerja tinggi.",
+          "Menganalisis kebijakan energi, dan kelistrikan dan dampaknya terhadap keberlanjutan lingkungan, sosial, serta perekonomian nasional.",
+          "Mendorong adopsi teknologi energi terbarukan di masyarakat melalui proyek percontohan dan model bisnis berbasis energi hijau.",
+          "Berkolaborasi dengan pemerintah, industri, dan institusi akademik dalam pengembangan teknologi serta percepatan transisi energi hijau di Indonesia"
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-energi-material/struktur-organisasi.jpg",
@@ -636,13 +427,13 @@
         }
       },
       "pusat-penelitian-ekonomi-kreatif-pariwisata-dan-perpajakan-berkelanjutan": {
-        "nama": "Pusat Penelitian Ekonomi Kreatif, Pariwisata dan Perpajakan Berkelanjutan",
+        "nama": "Pusat Penelitian Ekonomi Kreatif, Pariwisata, dan Perpajakan Berkelanjutan",
         "singkatan": "Puslit Ekonomi Kreatif",
         "kategori": "PUSLIT",
         "pimpinan": {
           "ketua": {
             "nama": "Fajrin Satria Dwi Kesumah, S.E., M.FBE.",
-            "foto": "/images/sub-bagian/puslit-ekonomi-kreatif/ketua.jpg",
+            "foto": "/images/sub-bagian/puslit-ekonomi-kreatif/ketua.jpeg",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Ekonomi+Kreatif",
             "jabatan": "Kepala Pusat Ekonomi Kreatif dan Pariwisata",
             "periode": "2024-2029"
@@ -657,35 +448,17 @@
             "Meneliti sistem perpajakan dan kebijakan fiskal",
             "Membangun jejaring dengan pelaku ekonomi kreatif",
             "Memberikan rekomendasi kebijakan pengembangan ekonomi kreatif"
-          ],
-          "program_unggulan": [
-            "Creative Economy Development Hub",
-            "Sustainable Tourism Research Center",
-            "Tax Policy Analysis Lab",
-            "Cultural Heritage Tourism Program",
-            "Digital Economy Innovation Initiative"
-          ],
-          "prestasi": [
-            "Juara 1 Riset Ekonomi Kreatif Nasional 2023",
-            "Best Tourism Research Award ASEAN 2022",
-            "50+ Kebijakan Pariwisata Diadopsi Pemerintah",
-            "Creative Hub berhasil mengembangkan 100+ UMKM",
-            "Tax Reform Contribution Award 2023"
-          ],
-          "keunggulan": [
-            "Creative Economy Lab Terlengkap",
-            "Tim Ahli Pariwisata Berpengalaman Internasional",
-            "Jaringan Industri Kreatif Nasional",
-            "Tourism Big Data Analytics Center",
-            "Collaboration Space for Creative Entrepreneurs"
           ]
         },
         "tugas_fungsi": [
-          "Mengembangkan model ekonomi kreatif berbasis lokal",
-          "Melakukan penelitian pengembangan pariwisata berkelanjutan",
-          "Meneliti sistem perpajakan dan kebijakan fiskal",
-          "Membangun jejaring dengan pelaku ekonomi kreatif",
-          "Memberikan rekomendasi kebijakan pengembangan ekonomi kreatif"
+          "Menyusun dan mengimplementasikan program riset tahunan di bidang ekonomi kreatif, pariwisata, dan perpajakan.",
+          "Mengembangkan basis data potensi ekonomi kreatif dan destinasi pariwisata lokal yang terintegrasi.",
+          "Menyediakan layanan Tax Center sebagai pusat literasi perpajakan di lingkungan kampus dan masyarakat.",
+          "Menjalin kemitraan strategis dengan pemerintah, dunia usaha, dan komunitas dalam pengembangan proyek pariwisata dan ekonomi kreatif.",
+          "Melakukan riset interdisipliner di bidang ekonomi kreatif, pariwisata berkelanjutan, perpajakan, dan investasi lokal-regional.",
+          "Memberikan layanan konsultasi dan edukasi perpajakan bagi mahasiswa, dosen, pelaku UMKM, dan masyarakat umum sebagai bentuk pengabdian dan mitra strategis.",
+          "Mendorong penguatan UMKM dan komunitas kreatif berbasis budaya dan teknologi melalui inkubasi usaha, riset pasar, dan pemetaan potensi wisata.",
+          "Menyusun skema investasi jangka pendek dan menengah di sektor pariwisata dan ekonomi kreatif yang selaras dengan prinsip keberlanjutan dan pelestarian lingkungan."
         ],
         "struktur_organisasi": {
           "gambar_struktur": "/images/sub-bagian/puslit-ekonomi-kreatif/struktur-organisasi.jpg",
@@ -700,8 +473,8 @@
         "kategori": "Administrasi",
         "pimpinan": {
           "ketua": {
-            "nama": "Ir. Budi Santoso, M.M.",
-            "foto": "/images/sub-bagian/bagian-umum/kepala.jpg",
+            "nama": "Ahmad Suntara, S.Kom.",
+            "foto": "/images/sub-bagian/bagian-umum/ketua.png",
             "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Bagian+Umum",
             "jabatan": "Kepala Bagian Umum",
             "periode": "2024-2029"
@@ -716,27 +489,6 @@
             "Melakukan pengadaan barang dan jasa sesuai peraturan berlaku",
             "Mengembangkan sistem informasi administrasi terintegrasi",
             "Menyelenggarakan layanan umum yang berkualitas untuk mendukung operasional LPPM"
-          ],
-          "program_unggulan": [
-            "Digitalisasi Layanan Administrasi Keuangan",
-            "Sistem Informasi Manajemen Kepegawaian Terpadu",
-            "Program Green Office dan Efisiensi Energi",
-            "Layanan Pengadaan Barang dan Jasa Online",
-            "Sistem Manajemen Arsip Digital"
-          ],
-          "prestasi": [
-            "Juara 1 Terbaik Unit Administrasi PTN se-Indonesia 2023",
-            "Penghargaan Satker Berkinerja Terbaik Unila 2022-2023",
-            "Sistem Akuntansi Berbasis Akreditasi A+",
-            "Zero Finding Audit 3 Tahun Berturut-turut",
-            "95% Kepuasan Pengguna Layanan Internal"
-          ],
-          "keunggulan": [
-            "Tim Administrasi Profesional dan Tersertifikasi",
-            "Sistem Layanan Digital Terintegrasi 24/7",
-            "Prosedur Operasional Standar (SOP) Terdokumentasi",
-            "Fasilitas Kantor Modern dan Berstandar Internasional",
-            "Sistem Monitoring Kinerja Real-time"
           ]
         },
         "tugas_fungsi": [
