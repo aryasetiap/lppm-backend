@@ -12,6 +12,9 @@ Route::get('/posts/categories', [PostController::class, 'categories']);
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
+// Public Content Endpoint (for Homepage & Dashboard)
+Route::get('/content/{filename}', [ContentController::class, 'show']);
+
 // Endpoint Login Admin (WordPress Legacy)
 Route::post('/admin/login', [AuthController::class, 'login']);
 
