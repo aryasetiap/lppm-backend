@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\PosApController;
 // Endpoint Berita
 Route::get('/posts/categories', [PostController::class, 'categories']);
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/slug/{slug}', [PostController::class, 'showBySlug']);
 Route::get('/posts/{id}', [PostController::class, 'show']);
 
 // Public Content Endpoint (for Homepage & Dashboard)

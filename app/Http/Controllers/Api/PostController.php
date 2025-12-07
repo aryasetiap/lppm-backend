@@ -108,25 +108,27 @@ class PostController extends Controller
     }
 
     /**
-     * MENAMPILKAN DETAIL SATU BERITA
-     * Endpoint: GET /api/posts/{id}
+     * MENAMPILKAN DETAIL SATU BERITA BY SLUG
+     * Endpoint: GET /api/posts/slug/{slug}
      */
-    public function show($id)
+    public function showBySlug($slug)
     {
+        // 1. Fetch Main Post
         $post = DB::connection('wordpress')
             ->table('2022_posts as p')
-            ->select('p.*', 'img.guid as thumbnail_url', 'terms.name as category_name')
-            // Join Gambar & Kategori (Sama seperti index)
+            ->select(
+                'p.*',
+                'img.guid as thumbnail_url',
+                'u.display_name as author_name' // Ambil nama author
+            )
+            // Join Gambar
             ->leftJoin('2022_postmeta as pm', function ($join) {
                 $join->on('p.ID', '=', 'pm.post_id')->where('pm.meta_key', '_thumbnail_id');
             })
             ->leftJoin('2022_posts as img', 'pm.meta_value', '=', 'img.ID')
-            ->leftJoin('2022_term_relationships as tr', 'p.ID', '=', 'tr.object_id')
-            ->leftJoin('2022_term_taxonomy as tt', function ($join) {
-                $join->on('tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')->where('tt.taxonomy', 'category');
-            })
-            ->leftJoin('2022_terms as terms', 'tt.term_id', '=', 'terms.term_id')
-            ->where('p.ID', $id)
+            // Join Author
+            ->leftJoin('2022_users as u', 'p.post_author', '=', 'u.ID')
+            ->where('p.post_name', $slug)
             ->where('p.post_status', 'publish')
             ->first();
 
@@ -134,7 +136,25 @@ class PostController extends Controller
             return response()->json(['message' => 'Berita tidak ditemukan'], 404);
         }
 
-        // Return Detail Lengkap dengan HTML Bersih
+        // 2. Fetch Categories & Tags belonging to this post
+        $terms = DB::connection('wordpress')
+            ->table('2022_term_relationships as tr')
+            ->join('2022_term_taxonomy as tt', 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
+            ->join('2022_terms as t', 'tt.term_id', '=', 't.term_id')
+            ->where('tr.object_id', $post->ID)
+            ->select('t.name', 't.slug', 'tt.taxonomy')
+            ->get();
+
+        $categories = $terms->where('taxonomy', 'category')->values();
+        $tags = $terms->where('taxonomy', 'post_tag')->values();
+        
+        // Ambil kategori utama untuk related posts
+        $mainCategorySlug = $categories->first()->slug ?? 'umum';
+
+        // 3. Increment Views (Optional - Simpan di meta jika perlu, atau custom table)
+        // DB::connection('wordpress')->table('2022_postmeta')->updateOrInsert(...)
+
+        // 4. Return Data
         return response()->json([
             'status' => 'success',
             'data' => [
@@ -142,12 +162,85 @@ class PostController extends Controller
                 'title' => $post->post_title,
                 'slug' => $post->post_name,
                 'date' => date('l, d F Y', strtotime($post->post_date)),
-                'category' => $post->category_name ?? 'Umum',
+                'author' => $post->author_name ?? 'Admin LPPM',
+                'categories' => $categories->map(fn($c) => ['name' => $c->name, 'slug' => $c->slug]),
+                'tags' => $tags->map(fn($t) => ['name' => $t->name, 'slug' => $t->slug]),
                 'image' => $this->fixImageUrl($post->thumbnail_url),
-                // PENTING: Membersihkan HTML kotor di sini
-                'content' => $this->cleanContent($post->post_content)
+                'content' => $this->cleanContent($post->post_content),
+                // Data Tambahan untuk Widget
+                'related_posts' => $this->getRelatedPosts($post->ID, $mainCategorySlug),
+                'recent_posts' => $this->getRecentPosts($post->ID),
             ]
         ]);
+    }
+
+    /**
+     * Helper: Get Related Posts by Category
+     */
+    private function getRelatedPosts($currentId, $categorySlug)
+    {
+        $posts = DB::connection('wordpress')
+            ->table('2022_posts as p')
+            ->select('p.ID', 'p.post_title', 'p.post_name as slug', 'p.post_date', 'img.guid as thumbnail_url')
+            // Join Gambar
+            ->leftJoin('2022_postmeta as pm', function ($join) {
+                $join->on('p.ID', '=', 'pm.post_id')->where('pm.meta_key', '_thumbnail_id');
+            })
+            ->leftJoin('2022_posts as img', 'pm.meta_value', '=', 'img.ID')
+            // Join Category
+            ->join('2022_term_relationships as tr', 'p.ID', '=', 'tr.object_id')
+            ->join('2022_term_taxonomy as tt', 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
+            ->join('2022_terms as t', 'tt.term_id', '=', 't.term_id')
+            ->where('t.slug', $categorySlug)
+            ->where('p.post_status', 'publish')
+            ->where('p.ID', '!=', $currentId) // Validasi exclude current post
+            ->where('p.post_type', 'post')
+            ->orderBy('p.post_date', 'desc')
+            ->limit(3)
+            ->distinct()
+            ->get();
+
+        return $posts->transform(function ($p) {
+            return [
+                'title' => $p->post_title,
+                'slug' => $p->slug,
+                'date' => date('d M Y', strtotime($p->post_date)),
+                'image' => $this->fixImageUrl($p->thumbnail_url)
+            ];
+        });
+    }
+
+    /**
+     * Helper: Get Recent Posts (Sidebar)
+     */
+    private function getRecentPosts($currentId)
+    {
+        $posts = DB::connection('wordpress')
+            ->table('2022_posts as p')
+            ->select('p.ID', 'p.post_title', 'p.post_name as slug', 'p.post_date')
+            ->where('p.post_status', 'publish')
+            ->where('p.post_type', 'post')
+            ->where('p.ID', '!=', $currentId)
+            ->orderBy('p.post_date', 'desc')
+            ->limit(5)
+            ->get();
+
+        return $posts->transform(function ($p) {
+            return [
+                'title' => $p->post_title,
+                'slug' => $p->slug,
+                'date' => date('d M Y', strtotime($p->post_date)),
+            ];
+        });
+    }
+
+    /**
+     * MENAMPILKAN DETAIL SATU BERITA (LEGACY ID)
+     * Endpoint: GET /api/posts/{id}
+     */
+    public function show($id)
+    {
+        return $this->showBySlug($id); // Fallback logic or keep purely ID based if preferred, but for now we focus on slug
     }
 
     // ==========================================
