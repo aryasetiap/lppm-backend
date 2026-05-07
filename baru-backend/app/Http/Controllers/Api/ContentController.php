@@ -3,25 +3,26 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContentDataset;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
 class ContentController extends Controller
 {
     /**
-     * Mapping filename ke path file.
+     * Mapping key dataset yang diizinkan.
      */
-    private function getFilePath(string $filename): ?string
+    private function normalizeDatasetKey(string $filename): ?string
     {
-        $mapping = [
-            'profile' => public_path('data/profile-lppm.json'),
-            'statistics' => public_path('data/statistics.json'),
-            'sub-bagian' => public_path('data/sub-bagian-lppm.json'),
+        $allowed = [
+            'profile',
+            'statistics',
+            'sub-bagian',
         ];
 
-        return $mapping[$filename] ?? null;
+        return in_array($filename, $allowed, true) ? $filename : null;
     }
 
     /**
@@ -30,9 +31,9 @@ class ContentController extends Controller
      */
     public function show(string $filename): JsonResponse
     {
-        $filePath = $this->getFilePath($filename);
+        $datasetKey = $this->normalizeDatasetKey($filename);
 
-        if (!$filePath) {
+        if (!$datasetKey) {
             return response()->json([
                 'meta' => [
                     'code' => 404,
@@ -42,37 +43,18 @@ class ContentController extends Controller
             ], 404);
         }
 
-        // Jika file belum ada, return struktur default kosong
-        if (!File::exists($filePath)) {
-            $defaultData = $this->getDefaultData($filename);
-            
-            return response()->json([
-                'meta' => [
-                    'code' => 200,
-                    'status' => 'success',
-                    'message' => 'Data berhasil diambil',
-                ],
-                'data' => $defaultData,
-            ]);
-        }
-
         try {
-            $content = File::get($filePath);
-            $data = json_decode($content, true);
+            $dataset = ContentDataset::query()->where('dataset_key', $datasetKey)->first();
+            $data = $dataset?->data;
 
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                return response()->json([
-                    'meta' => [
-                        'code' => 500,
-                        'status' => 'error',
-                        'message' => 'File JSON tidak valid',
-                    ],
-                ], 500);
+            // Migrasi otomatis dari JSON lama jika record DB belum ada
+            if (!$data) {
+                $data = $this->getLegacyJsonData($datasetKey) ?? $this->getDefaultData($datasetKey);
             }
 
             // Pastikan struktur metadata ada (merge dengan default jika tidak ada)
             if (!isset($data['metadata']) || !is_array($data['metadata'])) {
-                $defaultData = $this->getDefaultData($filename);
+                $defaultData = $this->getDefaultData($datasetKey);
                 $data = array_merge($defaultData, $data);
                 $data['metadata'] = array_merge($defaultData['metadata'], $data['metadata'] ?? []);
             }
@@ -80,6 +62,13 @@ class ContentController extends Controller
             // Pastikan last_updated ada
             if (empty($data['metadata']['last_updated'])) {
                 $data['metadata']['last_updated'] = now()->format('Y-m-d');
+            }
+
+            if (!$dataset) {
+                ContentDataset::query()->create([
+                    'dataset_key' => $datasetKey,
+                    'data' => $data,
+                ]);
             }
 
             return response()->json([
@@ -95,7 +84,7 @@ class ContentController extends Controller
                 'meta' => [
                     'code' => 500,
                     'status' => 'error',
-                    'message' => 'Gagal membaca file: ' . $e->getMessage(),
+                    'message' => 'Gagal membaca data: ' . $e->getMessage(),
                 ],
             ], 500);
         }
@@ -107,9 +96,9 @@ class ContentController extends Controller
      */
     public function update(Request $request, string $filename): JsonResponse
     {
-        $filePath = $this->getFilePath($filename);
+        $datasetKey = $this->normalizeDatasetKey($filename);
 
-        if (!$filePath) {
+        if (!$datasetKey) {
             return response()->json([
                 'meta' => [
                     'code' => 404,
@@ -139,65 +128,37 @@ class ContentController extends Controller
         }
 
         try {
-            // Backup file lama (opsional, tapi recommended)
-            if (File::exists($filePath)) {
-                $backupPath = $filePath . '.backup.' . date('Y-m-d_His');
-                File::copy($filePath, $backupPath);
-            }
-
-            // Pastikan folder data ada
-            $dataDir = public_path('data');
-            if (!File::isDirectory($dataDir)) {
-                File::makeDirectory($dataDir, 0755, true);
-            }
-
             // Ambil data dari request
             $data = $request->all();
-            
-            // Jika file sudah ada, merge dengan data lama (partial update)
-            $existingData = [];
-            if (File::exists($filePath)) {
-                $existingContent = File::get($filePath);
-                $existingData = json_decode($existingContent, true) ?? [];
-            }
-            
-            // Merge data lama dengan data baru (data baru prioritas)
-            // Gunakan array_replace_recursive agar value baru menimpa value lama
-            $mergedData = array_replace_recursive($existingData, $data);
-            
+
+            $dataset = ContentDataset::query()->where('dataset_key', $datasetKey)->first();
+            $existingData = $dataset?->data ?? $this->getLegacyJsonData($datasetKey) ?? $this->getDefaultData($datasetKey);
+
+            // Merge data lama dengan data baru (data baru prioritas).
+            // Untuk array numerik (list), wajib replace total agar proses hapus item
+            // dari frontend benar-benar tersimpan ke database.
+            $mergedData = $this->mergeContentData($existingData, $data);
+
             // Pastikan metadata ada dan lengkap
             if (!isset($mergedData['metadata']) || !is_array($mergedData['metadata'])) {
                 $mergedData['metadata'] = [];
             }
-            
+
             // Update last_updated otomatis
             $mergedData['metadata']['last_updated'] = now()->format('Y-m-d');
-            
+
             // Set default metadata jika belum ada
             if (empty($mergedData['metadata']['data_source'])) {
                 $mergedData['metadata']['data_source'] = 'LPPM Unila Database';
             }
             if (empty($mergedData['metadata']['description'])) {
-                $mergedData['metadata']['description'] = $this->getDefaultDescription($filename);
-            }
-            
-            // Gunakan merged data untuk disimpan
-            $data = $mergedData;
-
-            // Simpan ke file
-            $jsonContent = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-
-            if ($jsonContent === false) {
-                return response()->json([
-                    'meta' => [
-                        'code' => 500,
-                        'status' => 'error',
-                        'message' => 'Gagal mengkonversi data ke JSON',
-                    ],
-                ], 500);
+                $mergedData['metadata']['description'] = $this->getDefaultDescription($datasetKey);
             }
 
-            File::put($filePath, $jsonContent);
+            ContentDataset::query()->updateOrCreate(
+                ['dataset_key' => $datasetKey],
+                ['data' => $mergedData]
+            );
 
             return response()->json([
                 'meta' => [
@@ -206,7 +167,7 @@ class ContentController extends Controller
                     'message' => 'Data berhasil diupdate',
                 ],
                 'data' => [
-                    'filename' => basename($filePath),
+                    'dataset_key' => $datasetKey,
                     'updated_at' => now()->toIso8601String(),
                 ],
             ]);
@@ -215,10 +176,129 @@ class ContentController extends Controller
                 'meta' => [
                     'code' => 500,
                     'status' => 'error',
-                    'message' => 'Gagal menyimpan file: ' . $e->getMessage(),
+                    'message' => 'Gagal menyimpan data: ' . $e->getMessage(),
                 ],
             ], 500);
         }
+    }
+
+    /**
+     * POST /admin/upload-image
+     * Upload gambar dan kembalikan path publiknya.
+     */
+    public function uploadImage(Request $request): JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'image' => 'required|image|mimes:jpeg,jpg,png,webp|max:4096',
+            'folder' => 'nullable|string|max:50',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'meta' => [
+                    'code' => 400,
+                    'status' => 'error',
+                    'message' => 'File upload tidak valid',
+                    'errors' => $validator->errors(),
+                ],
+            ], 400);
+        }
+
+        try {
+            $folder = preg_replace('/[^a-zA-Z0-9_-]/', '', (string) $request->input('folder', 'general'));
+            $folder = $folder !== '' ? $folder : 'general';
+
+            $uploadDir = public_path('images/uploads/' . $folder);
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+
+            $file = $request->file('image');
+            $ext = strtolower($file->getClientOriginalExtension() ?: 'jpg');
+            $filename = Str::uuid() . '.' . $ext;
+            $file->move($uploadDir, $filename);
+
+            $path = '/images/uploads/' . $folder . '/' . $filename;
+
+            return response()->json([
+                'meta' => [
+                    'code' => 200,
+                    'status' => 'success',
+                    'message' => 'Upload gambar berhasil',
+                ],
+                'data' => [
+                    'path' => $path,
+                    'url' => rtrim((string) config('app.url'), '/') . $path,
+                ],
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'meta' => [
+                    'code' => 500,
+                    'status' => 'error',
+                    'message' => 'Gagal upload gambar: ' . $e->getMessage(),
+                ],
+            ], 500);
+        }
+    }
+
+    /**
+     * Membaca data JSON lama untuk migrasi otomatis saat pertama kali dipanggil.
+     */
+    private function getLegacyJsonData(string $filename): ?array
+    {
+        $mapping = [
+            'profile' => public_path('data/profile-lppm.json'),
+            'statistics' => public_path('data/statistics.json'),
+            'sub-bagian' => public_path('data/sub-bagian-lppm.json'),
+        ];
+
+        $filePath = $mapping[$filename] ?? null;
+        if (!$filePath || !is_file($filePath)) {
+            return null;
+        }
+
+        $content = @file_get_contents($filePath);
+        if ($content === false) {
+            return null;
+        }
+
+        $decoded = json_decode($content, true);
+
+        return is_array($decoded) ? $decoded : null;
+    }
+
+    /**
+     * Merge recursive dengan aturan:
+     * - Jika key tidak ada di data baru -> pertahankan data lama (mendukung partial update)
+     * - Jika keduanya array asosiatif -> merge per key
+     * - Jika salah satu array numerik (list) -> replace penuh dengan data baru
+     * - Selain array -> gunakan nilai data baru
+     */
+    private function mergeContentData(array $existing, array $incoming): array
+    {
+        $merged = $existing;
+
+        foreach ($incoming as $key => $value) {
+            if (array_key_exists($key, $existing)) {
+                if (is_array($existing[$key]) && is_array($value)) {
+                    $existingIsList = array_is_list($existing[$key]);
+                    $incomingIsList = array_is_list($value);
+
+                    if ($existingIsList || $incomingIsList) {
+                        $merged[$key] = $value;
+                    } else {
+                        $merged[$key] = $this->mergeContentData($existing[$key], $value);
+                    }
+                } else {
+                    $merged[$key] = $value;
+                }
+            } else {
+                $merged[$key] = $value;
+            }
+        }
+
+        return $merged;
     }
 
     /**

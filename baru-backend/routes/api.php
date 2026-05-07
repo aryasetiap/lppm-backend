@@ -23,6 +23,7 @@ Route::post('/admin/login', [AuthController::class, 'login']);
 Route::middleware('auth.admin')->group(function () {
     Route::get('/admin/content/{filename}', [ContentController::class, 'show']);
     Route::put('/admin/content/{filename}', [ContentController::class, 'update']);
+    Route::post('/admin/upload-image', [ContentController::class, 'uploadImage']);
 });
 
 // POS-AP public endpoints

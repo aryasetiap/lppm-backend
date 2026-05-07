@@ -1,5 +1,10 @@
 <?php
 
+$allowedOrigins = array_filter(array_map(
+    static fn (string $origin): string => trim($origin),
+    explode(',', (string) env('CORS_ALLOWED_ORIGINS', 'http://localhost:5173,http://localhost:3000,https://lppm.unila.ac.id'))
+));
+
 return [
 
     /*
@@ -19,9 +24,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:5173', 'http://localhost:3000'],
+    'allowed_origins' => $allowedOrigins,
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => [
+        '#^https?://([a-z0-9-]+\.)?unila\.ac\.id$#i',
+    ],
 
     'allowed_headers' => ['*'],
 
