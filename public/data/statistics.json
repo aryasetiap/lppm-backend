@@ -1,83 +1,67 @@
 {
   "metadata": {
-    "last_updated": "2025-11-21",
+    "last_updated": "2026-05-10",
     "data_source": "LPPM Unila Database",
-    "description": "Statistik penelitian, pengabdian, dan HKI/Paten LPPM Universitas Lampung periode 2020-2025"
+    "description": "Statistik penelitian, pengabdian, dan HKI/Paten LPPM Universitas Lampung periode 2021-2025"
   },
   "yearly_data": [
     {
-      "year": 2020,
-      "penelitian_blu": 372,
-      "pengabdian_blu": 0,
-      "paten": 20,
-      "haki": 60
-    },
-    {
       "year": 2021,
-      "penelitian_blu": 392,
+      "penelitian_blu": 45,
       "pengabdian_blu": 0,
-      "paten": 28,
-      "haki": 60
+      "paten": 0,
+      "haki": 0
     },
     {
       "year": 2022,
-      "penelitian_blu": 443,
-      "pengabdian_blu": 196,
-      "paten": 24,
-      "haki": 145
+      "penelitian_blu": 66,
+      "pengabdian_blu": 0,
+      "paten": 0,
+      "haki": 0
     },
     {
       "year": 2023,
-      "penelitian_blu": 367,
-      "pengabdian_blu": 153,
-      "paten": 29,
-      "haki": 90
+      "penelitian_blu": 68,
+      "pengabdian_blu": 0,
+      "paten": 0,
+      "haki": 0
     },
     {
       "year": 2024,
-      "penelitian_blu": 371,
-      "pengabdian_blu": 140,
-      "paten": 42,
-      "haki": 92
+      "penelitian_blu": 73,
+      "pengabdian_blu": 0,
+      "paten": 0,
+      "haki": 0
     },
     {
       "year": 2025,
-      "penelitian_blu": 368,
-      "pengabdian_blu": 231,
+      "penelitian_blu": 62,
+      "pengabdian_blu": 0,
       "paten": 0,
-      "haki": 71
+      "haki": 0
     }
   ],
   "total_summary": {
-    "total_penelitian_blu": 2313,
-    "total_pengabdian_blu": 720,
-    "total_paten": 143,
-    "total_haki": 518,
-    "growth_penelitian": -1.08,
+    "total_penelitian_blu": 314,
+    "total_pengabdian_blu": 0,
+    "total_paten": 233,
+    "total_haki": 1139,
+    "total_merek": 2,
+    "growth_penelitian": -15.07,
     "growth_pengabdian": null,
-    "growth_paten": -100.0,
-    "growth_haki": 18.33
+    "growth_paten": null,
+    "growth_haki": null
   },
   "quarterly_data": [
     {
-      "quarter": "Q1 2024",
-      "penelitian_blu": 89,
-      "pengabdian_blu": 31
+      "quarter": "Q1",
+      "penelitian_blu": 214,
+      "pengabdian_blu": 157
     },
     {
-      "quarter": "Q2 2024",
-      "penelitian_blu": 92,
-      "pengabdian_blu": 37
-    },
-    {
-      "quarter": "Q3 2024",
-      "penelitian_blu": 95,
-      "pengabdian_blu": 36
-    },
-    {
-      "quarter": "Q4 2024",
-      "penelitian_blu": 95,
-      "pengabdian_blu": 36
+      "quarter": "Q2",
+      "penelitian_blu": 151,
+      "pengabdian_blu": 74
     }
   ]
 }
