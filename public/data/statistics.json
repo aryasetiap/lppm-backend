@@ -7,48 +7,48 @@
   "yearly_data": [
     {
       "year": 2021,
-      "penelitian_blu": 45,
-      "pengabdian_blu": 0,
+      "penelitian_blu": 673,
+      "pengabdian_blu": 343,
       "paten": 0,
       "haki": 0
     },
     {
       "year": 2022,
-      "penelitian_blu": 66,
-      "pengabdian_blu": 0,
+      "penelitian_blu": 1004,
+      "pengabdian_blu": 522,
       "paten": 0,
       "haki": 0
     },
     {
       "year": 2023,
-      "penelitian_blu": 68,
-      "pengabdian_blu": 0,
+      "penelitian_blu": 907,
+      "pengabdian_blu": 553,
       "paten": 0,
       "haki": 0
     },
     {
       "year": 2024,
-      "penelitian_blu": 73,
-      "pengabdian_blu": 0,
+      "penelitian_blu": 944,
+      "pengabdian_blu": 470,
       "paten": 0,
       "haki": 0
     },
     {
       "year": 2025,
-      "penelitian_blu": 62,
-      "pengabdian_blu": 0,
+      "penelitian_blu": 834,
+      "pengabdian_blu": 474,
       "paten": 0,
       "haki": 0
     }
   ],
   "total_summary": {
-    "total_penelitian_blu": 314,
-    "total_pengabdian_blu": 0,
+    "total_penelitian_blu": 4362,
+    "total_pengabdian_blu": 2362,
     "total_paten": 233,
     "total_haki": 1139,
     "total_merek": 2,
-    "growth_penelitian": -15.07,
-    "growth_pengabdian": null,
+    "growth_penelitian": -11.65,
+    "growth_pengabdian": 0.85,
     "growth_paten": null,
     "growth_haki": null
   },
