@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ContentController;
+use App\Http\Controllers\Api\BookWritingController;
 use App\Http\Controllers\Api\PosApController;
 
 // Endpoint Berita
@@ -29,6 +30,9 @@ Route::middleware('auth.admin')->group(function () {
 // POS-AP public endpoints
 Route::get('/pos-ap/downloads', [PosApController::class, 'downloads']);
 Route::get('/pos-ap/categories', [PosApController::class, 'categories']);
+
+// Penulisan Buku public endpoint
+Route::get('/penulisan-buku/downloads', [BookWritingController::class, 'downloads']);
 
 // General Documents endpoint
 Route::get('/documents', [\App\Http\Controllers\Api\DocumentController::class, 'index']);
