@@ -34,6 +34,7 @@ class AdminMediaController extends Controller
 
         $paginator = $this->baseQuery($filters)
             ->orderByDesc('p.post_date')
+            ->orderByDesc('p.ID')
             ->paginate((int) ($filters['per_page'] ?? 20));
 
         return response()->json([
@@ -48,7 +49,7 @@ class AdminMediaController extends Controller
                 ],
             ],
             'data' => $paginator->getCollection()->map(fn ($media) => $this->mediaItem($media)),
-        ]);
+        ])->header('Cache-Control', 'private, no-store, no-cache, must-revalidate');
     }
 
     /**
@@ -76,7 +77,7 @@ class AdminMediaController extends Controller
                 'status' => 'success',
             ],
             'data' => $this->mediaItem($item),
-        ]);
+        ])->header('Cache-Control', 'private, no-store, no-cache, must-revalidate');
     }
 
     /**
