@@ -2,12 +2,17 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\WordpressAdminSession;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthenticateAdmin
 {
+    public function __construct(private readonly WordpressAdminSession $sessions)
+    {
+    }
+
     /**
      * Handle an incoming request.
      * Cek Bearer token dari header Authorization.
@@ -16,31 +21,21 @@ class AuthenticateAdmin
     {
         $token = $request->bearerToken();
 
-        if (!$token) {
+        $admin = $this->sessions->resolve($token);
+        if ($admin === null) {
             return response()->json([
                 'meta' => [
                     'code' => 401,
                     'status' => 'error',
-                    'message' => 'Unauthorized',
+                    'message' => 'Sesi admin tidak valid atau telah berakhir.',
                 ],
             ], 401);
         }
 
-        // Validasi format token (sha256 = 64 karakter hex)
-        if (strlen($token) !== 64 || !ctype_xdigit($token)) {
-            return response()->json([
-                'meta' => [
-                    'code' => 401,
-                    'status' => 'error',
-                    'message' => 'Token tidak valid',
-                ],
-            ], 401);
-        }
-
-        // TODO: Nanti bisa ditambah validasi token dari database/cache
-        // Untuk sekarang, kita cek format token-nya dulu
+        // The profile is resolved during login from WordPress role/capability
+        // data and remains server-side in the short-lived Laravel session.
+        $request->attributes->set('admin_session', $admin);
 
         return $next($request);
     }
 }
-

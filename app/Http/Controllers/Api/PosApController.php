@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Support\WordpressDocumentResolver;
+use App\Support\WordpressTableResolver;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PosApController extends Controller
 {
-    /**
-     * Helper untuk mendapatkan nama tabel WordPress sesuai prefix.
-     */
-    private function wpTable(string $table): string
+    public function __construct(
+        private readonly WordpressTableResolver $tables,
+        private readonly WordpressDocumentResolver $documents
+    )
     {
-        $prefix = env('DB_WP_PREFIX', 'wp_');
-        return $prefix . $table;
     }
 
     /**
@@ -28,16 +27,13 @@ class PosApController extends Controller
         $limit = (int) $request->query('limit', 20);
         $limit = $limit > 0 ? min($limit, 100) : 20;
 
-        $siteUrl = rtrim(config('services.wordpress.site_url', env('WP_BASE_URL', '')), '/');
-
         try {
-            $connectionName = config('services.wordpress.connection', 'wordpress');
-            $connection = DB::connection($connectionName);
+            $connection = $this->tables->connection();
 
-            $postsTable = $this->wpTable('posts');
-            $termsTable = $this->wpTable('terms');
-            $termTaxTable = $this->wpTable('term_taxonomy');
-            $termRelTable = $this->wpTable('term_relationships');
+            $postsTable = $this->tables->table('posts');
+            $termsTable = $this->tables->table('terms');
+            $termTaxTable = $this->tables->table('term_taxonomy');
+            $termRelTable = $this->tables->table('term_relationships');
 
             $query = $connection->table("{$postsTable} as p")
                 ->select([
@@ -55,16 +51,18 @@ class PosApController extends Controller
                 ->join("{$termTaxTable} as tt", 'tt.term_taxonomy_id', '=', 'tr.term_taxonomy_id')
                 ->join("{$termsTable} as t", 't.term_id', '=', 'tt.term_id')
                 ->where('p.post_status', 'publish')
-                ->whereIn('p.post_type', ['wpdmpro', 'post', 'page'])
+                ->where('p.post_type', 'wpdmpro')
                 ->where('tt.taxonomy', 'wpdmcategory')
                 ->where('t.slug', $categorySlug)
                 ->orderByDesc('p.post_date')
                 ->limit($limit);
 
-            $items = $query->get()->map(function ($item) use ($siteUrl) {
-                $downloadUrl = $siteUrl
-                    ? $siteUrl . '/?wpdmdl=' . $item->ID
-                    : $item->guid;
+            $documents = $query->get();
+            $metadata = $this->metadataFor($documents->pluck('ID')->map(fn ($id) => (int) $id)->all());
+
+            $items = $documents->map(function ($item) use ($metadata) {
+                $file = $this->documents->resolve($metadata[(int) $item->ID] ?? []);
+                $isPublic = $file['available'] && $this->documents->isPublic($metadata[(int) $item->ID] ?? []);
 
                 return [
                     'id' => (int) $item->ID,
@@ -76,10 +74,8 @@ class PosApController extends Controller
                         'name' => $item->category_name,
                     ],
                     'updated_at' => $item->post_modified ?: $item->post_date,
-                    'download_url' => $downloadUrl,
-                    'permalink' => $siteUrl
-                        ? rtrim($siteUrl, '/') . '/' . $item->post_name
-                        : $item->guid,
+                    'download_url' => $isPublic ? $this->documents->downloadUrl((int) $item->ID) : null,
+                    'availability' => $file['available'] ? 'available' : 'unavailable',
                 ];
             });
 
@@ -103,6 +99,28 @@ class PosApController extends Controller
         }
     }
 
+    /** @param list<int> $ids @return array<int, array<string, list<string>>> */
+    private function metadataFor(array $ids): array
+    {
+        if ($ids === []) {
+            return [];
+        }
+
+        $metadata = [];
+        $this->tables->connection()
+            ->table($this->tables->table('postmeta'))
+            ->select(['post_id', 'meta_key', 'meta_value'])
+            ->whereIn('post_id', $ids)
+            ->whereIn('meta_key', ['__lppm_document_file', '__wpdm_files', '__wpdm_access'])
+            ->orderBy('meta_id')
+            ->get()
+            ->each(function ($row) use (&$metadata): void {
+                $metadata[(int) $row->post_id][(string) $row->meta_key][] = (string) $row->meta_value;
+            });
+
+        return $metadata;
+    }
+
     /**
      * GET /pos-ap/categories
      * Mengambil daftar kategori wpdm yang tersedia.
@@ -110,11 +128,10 @@ class PosApController extends Controller
     public function categories(): JsonResponse
     {
         try {
-            $connectionName = config('services.wordpress.connection', 'wordpress');
-            $connection = DB::connection($connectionName);
+            $connection = $this->tables->connection();
 
-            $termsTable = $this->wpTable('terms');
-            $termTaxTable = $this->wpTable('term_taxonomy');
+            $termsTable = $this->tables->table('terms');
+            $termTaxTable = $this->tables->table('term_taxonomy');
 
             $categories = $connection->table("{$termTaxTable} as tt")
                 ->select([
@@ -154,4 +171,3 @@ class PosApController extends Controller
         }
     }
 }
-

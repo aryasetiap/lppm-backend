@@ -3,13 +3,22 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Support\WordpressAssetResolver;
+use App\Support\WordpressDocumentResolver;
+use App\Support\WordpressTableResolver;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class DocumentController extends Controller
 {
+    public function __construct(
+        private readonly WordpressTableResolver $tables,
+        private readonly WordpressAssetResolver $assets,
+        private readonly WordpressDocumentResolver $documents
+    ) {
+    }
+
     /**
      * Daftar kategori dokumen penunjang.
      */
@@ -26,24 +35,6 @@ class DocumentController extends Controller
     ];
 
     /**
-     * Helper untuk mendapatkan nama tabel WordPress sesuai prefix.
-     */
-    private function wpTable(string $table): string
-    {
-        // Fallback ke 'wp_' jika env tidak ada, tapi idealnya cek config
-        // Kita coba deteksi apakah PostController pakai '2022_'
-        // Untuk aman, kita pakai logic yang sama dengan PosApController dulu
-        $prefix = env('DB_WP_PREFIX', 'wp_');
-        // Jika di PostController hardcode '2022_', mungkin kita perlu sesuaikan
-        // Tapi mari kita coba pakai env dulu atau default standard.
-        // Cek PostController: ->table('2022_posts as p')
-        // Sepertinya prefixnya '2022_'.
-        // Mari kita buat dynamic tapi default ke '2022_' jika env tak set, atau ikuti env.
-        
-        return $prefix . $table;
-    }
-
-    /**
      * GET /documents
      * Mengambil daftar dokumen (attachment) dari WordPress.
      */
@@ -54,34 +45,36 @@ class DocumentController extends Controller
         $search = $request->query('search');
         $categoryFilter = (string) $request->query('category', '');
 
-        // URL Base WordPress untuk link file
-        $siteUrl = rtrim(config('services.wordpress.site_url', env('WP_BASE_URL', 'https://lppm.unila.ac.id')), '/');
-
         try {
-            $connectionName = config('services.wordpress.connection', 'wordpress');
-            $connection = DB::connection($connectionName);
+            // "Arsip Lainnya" is the public general archive. It must include
+            // both normal WordPress attachments and modern/legacy Download
+            // Manager packages. The support-category view below intentionally
+            // remains attachment-only because its categories are historical
+            // title-based groupings, not wpdmcategory terms.
+            if ($categoryFilter === '') {
+                return $this->publicArchive($limit, trim((string) $search));
+            }
 
-            // Kita gunakan hardcode '2022_' jika env tidak ada, karena PostController pakai itu.
-            // Atau lebih aman kita cek apakah tabel '2022_posts' ada?
-            // Asumsi: ikuti pattern PostController yang sudah jalan.
-            // Tapi PosApController pakai $this->wpTable.
-            // Mari kita coba pakai '2022_' sebagai default prefix di sini jika env kosong.
-            $prefix = env('DB_WP_PREFIX', '2022_'); 
-            
-            $postsTable = $prefix . 'posts';
+            $connection = $this->tables->connection();
+            $postsTable = $this->tables->table('posts');
+            $postmetaTable = $this->tables->table('postmeta');
 
-            $query = $connection->table($postsTable)
+            $query = $connection->table("{$postsTable} as p")
                 ->select([
-                    'ID',
-                    'post_title',
-                    'post_date',
-                    'post_mime_type',
-                    'guid',
-                    'post_excerpt',
-                    'post_name'
+                    'p.ID',
+                    'p.post_title',
+                    'p.post_date',
+                    'p.post_mime_type',
+                    'p.post_excerpt',
+                    'p.post_name',
+                    'file_meta.meta_value as attachment_path',
                 ])
-                ->where('post_type', 'attachment')
-                ->where('post_status', 'inherit'); // Attachment biasanya statusnya inherit
+                ->leftJoin("{$postmetaTable} as file_meta", function ($join) {
+                    $join->on('p.ID', '=', 'file_meta.post_id')
+                        ->where('file_meta.meta_key', '_wp_attached_file');
+                })
+                ->where('p.post_type', 'attachment')
+                ->where('p.post_status', 'inherit'); // Attachment biasanya statusnya inherit
 
             // Filter hanya file dokumen (PDF, Word, Excel, PPT, ZIP)
             $query->where(function($q) {
@@ -97,7 +90,7 @@ class DocumentController extends Controller
             });
 
             if ($search) {
-                $query->where('post_title', 'like', '%' . $search . '%');
+                $query->where('p.post_title', 'like', '%' . $search . '%');
             }
 
             // Terapkan filter kategori di level SQL (sebelum pagination)
@@ -109,19 +102,13 @@ class DocumentController extends Controller
                 $this->applyCategorySqlFilter($query, $categoryFilter);
             }
 
-            $query->orderByDesc('post_date');
+            $query->orderByDesc('p.post_date');
 
             // Gunakan paginate() dari Laravel
             $paginator = $query->paginate($limit);
 
-            $items = $paginator->getCollection()->map(function ($item) use ($siteUrl) {
-                // Fix URL
-                $url = $item->guid;
-                if (strpos($url, 'http') !== 0) {
-                     $url = $siteUrl . $url;
-                }
-                // Force HTTPS
-                $url = str_replace('http://', 'https://', $url);
+            $items = $paginator->getCollection()->map(function ($item) {
+                $url = $this->assets->publicUrl($item->attachment_path);
 
                 // Tentukan tipe file simpel
                 $type = 'file';
@@ -178,6 +165,206 @@ class DocumentController extends Controller
                 ],
             ], 500);
         }
+    }
+
+    private function publicArchive(int $limit, string $search): JsonResponse
+    {
+        $connection = $this->tables->connection();
+        $postsTable = $this->tables->table('posts');
+        $postmetaTable = $this->tables->table('postmeta');
+
+        $attachments = $connection->table("{$postsTable} as p")
+            ->select([
+                'p.ID', 'p.post_title', 'p.post_date', 'p.post_mime_type', 'p.post_excerpt', 'p.post_name',
+                'file_meta.meta_value as attachment_path',
+                $connection->raw("'attachment' as source"),
+            ])
+            ->leftJoin("{$postmetaTable} as file_meta", function ($join) {
+                $join->on('p.ID', '=', 'file_meta.post_id')
+                    ->where('file_meta.meta_key', '_wp_attached_file');
+            })
+            ->where('p.post_type', 'attachment')
+            ->where('p.post_status', 'inherit');
+        $this->applyDocumentMimeScope($attachments);
+        if ($search !== '') {
+            $attachments->where(function (Builder $query) use ($search) {
+                $query->where('p.post_title', 'like', '%' . $search . '%')
+                    ->orWhere('p.post_excerpt', 'like', '%' . $search . '%')
+                    ->orWhere('file_meta.meta_value', 'like', '%' . $search . '%');
+            });
+        }
+
+        $packages = $connection->table("{$postsTable} as p")
+            ->select([
+                'p.ID', 'p.post_title', 'p.post_date', 'p.post_mime_type', 'p.post_excerpt', 'p.post_name',
+                $connection->raw('NULL as attachment_path'),
+                $connection->raw("'wpdmpro' as source"),
+            ])
+            ->where('p.post_type', 'wpdmpro')
+            ->where('p.post_status', 'publish')
+            ->whereExists(function (Builder $access) use ($postmetaTable) {
+                $access->selectRaw('1')
+                    ->from("{$postmetaTable} as access_meta")
+                    ->whereColumn('access_meta.post_id', 'p.ID')
+                    ->where('access_meta.meta_key', '__wpdm_access')
+                    ->where('access_meta.meta_value', 'like', '%guest%');
+            });
+        if ($search !== '') {
+            $packages->where(function (Builder $query) use ($search) {
+                $query->where('p.post_title', 'like', '%' . $search . '%')
+                    ->orWhere('p.post_excerpt', 'like', '%' . $search . '%')
+                    ->orWhere('p.post_content', 'like', '%' . $search . '%');
+            });
+        }
+
+        $paginator = $connection->query()
+            ->fromSub($attachments->unionAll($packages), 'archive')
+            ->select('archive.*')
+            ->orderByDesc('archive.post_date')
+            ->paginate($limit);
+        $rows = $paginator->getCollection();
+        $packageIds = $rows->where('source', 'wpdmpro')->pluck('ID')->map(fn ($id): int => (int) $id)->all();
+        $metadata = $this->packageMetadataFor($packageIds);
+        $categories = $this->packageCategoriesFor($packageIds);
+
+        $items = $rows->map(function ($item) use ($metadata, $categories) {
+            if ((string) $item->source === 'wpdmpro') {
+                $file = $this->documents->resolve($metadata[(int) $item->ID] ?? []);
+                if (!$file['available'] || !$this->documents->isPublic($metadata[(int) $item->ID] ?? [])) {
+                    // SQL filters public intent; the resolver is the final
+                    // authority for the actual safe filesystem reference.
+                    return null;
+                }
+                $category = $categories[(int) $item->ID][0] ?? [
+                    'slug' => 'arsip-lainnya',
+                    'name' => 'Arsip Lainnya',
+                ];
+
+                return [
+                    'id' => (int) $item->ID,
+                    'title' => (string) $item->post_title,
+                    'date' => (string) $item->post_date,
+                    'url' => $this->documents->downloadUrl((int) $item->ID),
+                    'download_url' => $this->documents->downloadUrl((int) $item->ID),
+                    'type' => $this->documentType((string) $file['file_name']),
+                    'mime' => (string) $item->post_mime_type,
+                    'excerpt' => (string) $item->post_excerpt,
+                    'category' => $category,
+                    'source' => 'wpdmpro',
+                    'source_label' => 'Arsip LPPM',
+                    'availability' => 'available',
+                ];
+            }
+
+            $url = $this->assets->publicUrl($item->attachment_path);
+            $category = $this->categorizeDocument($item->post_title, $item->post_excerpt);
+
+            return [
+                'id' => (int) $item->ID,
+                'title' => (string) $item->post_title,
+                'date' => (string) $item->post_date,
+                'url' => $url,
+                'download_url' => $url,
+                'type' => $this->documentType((string) $item->post_mime_type),
+                'mime' => (string) $item->post_mime_type,
+                'excerpt' => (string) $item->post_excerpt,
+                'category' => $category,
+                'source' => 'attachment',
+                'source_label' => 'Dokumen pendukung',
+                'availability' => $url === null ? 'unavailable' : 'available',
+            ];
+        })->filter()->values();
+
+        return response()->json([
+            'meta' => [
+                'code' => 200,
+                'status' => 'success',
+                'message' => 'Arsip publik berhasil diambil',
+                'count' => $items->count(),
+                'pagination' => [
+                    'total' => $paginator->total(),
+                    'per_page' => $paginator->perPage(),
+                    'current_page' => $paginator->currentPage(),
+                    'last_page' => $paginator->lastPage(),
+                    'next_page_url' => $paginator->nextPageUrl(),
+                    'prev_page_url' => $paginator->previousPageUrl(),
+                ],
+            ],
+            'data' => $items,
+        ]);
+    }
+
+    private function applyDocumentMimeScope(Builder $query): void
+    {
+        $query->where(function (Builder $mime) {
+            $mime->where('p.post_mime_type', 'like', 'application/pdf')
+                ->orWhere('p.post_mime_type', 'like', 'application/msword')
+                ->orWhere('p.post_mime_type', 'like', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+                ->orWhere('p.post_mime_type', 'like', 'application/vnd.ms-excel')
+                ->orWhere('p.post_mime_type', 'like', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+                ->orWhere('p.post_mime_type', 'like', 'application/vnd.ms-powerpoint')
+                ->orWhere('p.post_mime_type', 'like', 'application/vnd.openxmlformats-officedocument.presentationml.presentation')
+                ->orWhere('p.post_mime_type', 'like', 'application/zip')
+                ->orWhere('p.post_mime_type', 'like', 'application/x-rar-compressed');
+        });
+    }
+
+    /** @param list<int> $ids @return array<int,array<string,list<string>>> */
+    private function packageMetadataFor(array $ids): array
+    {
+        if ($ids === []) {
+            return [];
+        }
+        $metadata = [];
+        $this->tables->connection()->table($this->tables->table('postmeta'))
+            ->select(['post_id', 'meta_key', 'meta_value'])
+            ->whereIn('post_id', $ids)
+            ->whereIn('meta_key', ['__lppm_document_file', '__wpdm_files', '__wpdm_access'])
+            ->orderBy('meta_id')
+            ->get()
+            ->each(function ($row) use (&$metadata): void {
+                $metadata[(int) $row->post_id][(string) $row->meta_key][] = (string) $row->meta_value;
+            });
+
+        return $metadata;
+    }
+
+    /** @param list<int> $ids @return array<int,list<array{slug:string,name:string}>> */
+    private function packageCategoriesFor(array $ids): array
+    {
+        if ($ids === []) {
+            return [];
+        }
+        $categories = [];
+        $this->tables->connection()
+            ->table($this->tables->table('term_relationships') . ' as relationships')
+            ->join($this->tables->table('term_taxonomy') . ' as taxonomy', 'taxonomy.term_taxonomy_id', '=', 'relationships.term_taxonomy_id')
+            ->join($this->tables->table('terms') . ' as terms', 'terms.term_id', '=', 'taxonomy.term_id')
+            ->whereIn('relationships.object_id', $ids)
+            ->where('taxonomy.taxonomy', 'wpdmcategory')
+            ->select(['relationships.object_id', 'terms.slug', 'terms.name'])
+            ->orderBy('terms.name')
+            ->get()
+            ->each(function ($row) use (&$categories): void {
+                $categories[(int) $row->object_id][] = [
+                    'slug' => (string) $row->slug,
+                    'name' => (string) $row->name,
+                ];
+            });
+
+        return $categories;
+    }
+
+    private function documentType(string $value): string
+    {
+        $value = strtolower($value);
+        if (str_contains($value, 'pdf') || str_ends_with($value, '.pdf')) return 'pdf';
+        if (str_contains($value, 'word') || str_contains($value, 'document') || preg_match('/\.docx?$/', $value)) return 'word';
+        if (str_contains($value, 'excel') || str_contains($value, 'spreadsheet') || preg_match('/\.xlsx?$/', $value)) return 'excel';
+        if (str_contains($value, 'powerpoint') || str_contains($value, 'presentation') || preg_match('/\.pptx?$/', $value)) return 'ppt';
+        if (str_contains($value, 'zip') || str_contains($value, 'rar') || preg_match('/\.(zip|rar)$/', $value)) return 'archive';
+
+        return 'file';
     }
 
     /**

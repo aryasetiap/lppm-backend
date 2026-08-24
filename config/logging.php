@@ -73,6 +73,14 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'cms_audit' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/cms-audit.log'),
+            'level' => 'info',
+            'days' => (int) env('CMS_AUDIT_LOG_DAYS', 90),
+            'replace_placeholders' => true,
+        ],
+
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),

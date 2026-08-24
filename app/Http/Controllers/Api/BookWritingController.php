@@ -3,12 +3,19 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Support\WordpressAssetResolver;
+use App\Support\WordpressTableResolver;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class BookWritingController extends Controller
 {
+    public function __construct(
+        private readonly WordpressTableResolver $tables,
+        private readonly WordpressAssetResolver $assets
+    ) {
+    }
+
     /**
      * Nama berkas yang menjadi awalan panduan Penulisan Buku RMBC Unila.
      */
@@ -24,34 +31,36 @@ class BookWritingController extends Controller
         $search = trim((string) $request->query('search', ''));
 
         try {
-            $connection = DB::connection(config('services.wordpress.connection', 'wordpress'));
-            $prefix = env('DB_WP_PREFIX', 'wp_');
-            $postsTable = $prefix . 'posts';
+            $connection = $this->tables->connection();
+            $postsTable = $this->tables->table('posts');
+            $postmetaTable = $this->tables->table('postmeta');
 
-            $query = $connection->table($postsTable)
+            $query = $connection->table("{$postsTable} as p")
                 ->select([
-                    'ID',
-                    'post_title',
-                    'post_excerpt',
-                    'post_date',
-                    'post_modified',
-                    'post_name',
-                    'post_mime_type',
-                    'guid',
+                    'p.ID',
+                    'p.post_title',
+                    'p.post_excerpt',
+                    'p.post_date',
+                    'p.post_modified',
+                    'p.post_name',
+                    'p.post_mime_type',
+                    'file_meta.meta_value as attachment_path',
                 ])
-                ->where('post_type', 'attachment')
-                ->where('post_status', 'inherit')
-                ->where('post_mime_type', 'application/pdf')
+                ->leftJoin("{$postmetaTable} as file_meta", function ($join) {
+                    $join->on('p.ID', '=', 'file_meta.post_id')
+                        ->where('file_meta.meta_key', '_wp_attached_file');
+                })
+                ->where('p.post_type', 'attachment')
+                ->where('p.post_status', 'inherit')
+                ->where('p.post_mime_type', 'application/pdf')
                 ->where(function ($query) {
-                    // GUID menyimpan nama file asli; dua kondisi lain mendukung data WordPress
-                    // yang judul atau slug-nya telah dinormalisasi saat file diunggah.
-                    $query->where('guid', 'like', '%' . self::FILE_PREFIX . '%')
-                        ->orWhere('post_name', 'like', strtolower(self::FILE_PREFIX) . '%')
-                        ->orWhere('post_title', 'like', str_replace('-', ' ', self::FILE_PREFIX) . '%');
+                    $query->where('file_meta.meta_value', 'like', '%' . self::FILE_PREFIX . '%')
+                        ->orWhere('p.post_name', 'like', strtolower(self::FILE_PREFIX) . '%')
+                        ->orWhere('p.post_title', 'like', str_replace('-', ' ', self::FILE_PREFIX) . '%');
                 });
 
             if ($search !== '') {
-                $query->where('post_title', 'like', '%' . $search . '%');
+                $query->where('p.post_title', 'like', '%' . $search . '%');
             }
 
             $paginator = $query
@@ -65,8 +74,8 @@ class BookWritingController extends Controller
                 'slug' => $item->post_name,
                 'updated_at' => $item->post_modified ?: $item->post_date,
                 'date' => $item->post_date,
-                'url' => str_replace('http://', 'https://', $item->guid),
-                'download_url' => str_replace('http://', 'https://', $item->guid),
+                'url' => $this->assets->publicUrl($item->attachment_path),
+                'download_url' => $this->assets->publicUrl($item->attachment_path),
                 'type' => 'pdf',
                 'mime' => $item->post_mime_type,
             ]);

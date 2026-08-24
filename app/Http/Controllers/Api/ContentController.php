@@ -218,7 +218,8 @@ class ContentController extends Controller
             $filename = Str::uuid() . '.' . $ext;
             $file->move($uploadDir, $filename);
 
-            $path = '/images/uploads/' . $folder . '/' . $filename;
+            $legacyPath = '/images/uploads/' . $folder . '/' . $filename;
+            $path = '/api/content-images/' . $folder . '/' . $filename;
 
             return response()->json([
                 'meta' => [
@@ -228,7 +229,11 @@ class ContentController extends Controller
                 ],
                 'data' => [
                     'path' => $path,
-                    'url' => rtrim((string) config('app.url'), '/') . $path,
+                    'url' => route('content-images.show', [
+                        'folder' => $folder,
+                        'filename' => $filename,
+                    ]),
+                    'legacy_path' => $legacyPath,
                 ],
             ]);
         } catch (\Exception $e) {
@@ -369,8 +374,7 @@ class ContentController extends Controller
                     'description' => 'Data lengkap sub bagian dan unit di LPPM Universitas Lampung',
                 ],
                 'sub_bagian' => [
-                    'pui' => [],
-                    'puslit' => [],
+                    'pusat-lppm' => [],
                     'administrasi' => [],
                 ],
             ],
@@ -393,4 +397,3 @@ class ContentController extends Controller
         return $descriptions[$filename] ?? 'Data LPPM Universitas Lampung';
     }
 }
-

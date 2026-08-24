@@ -3,12 +3,19 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Support\WordpressAssetResolver;
+use App\Support\WordpressTableResolver;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
+    public function __construct(
+        private readonly WordpressTableResolver $tables,
+        private readonly WordpressAssetResolver $assets
+    ) {
+    }
+
     /**
      * MENAMPILKAN DAFTAR BERITA (LIST)
      * Fitur: Pagination (9 item), Search, Filter Category
@@ -17,36 +24,45 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        // 1. Inisialisasi Query Builder ke DB WordPress
-        // Kita gunakan '2022_posts' sebagai tabel utama (alias 'p')
-        $query = DB::connection('wordpress')
-            ->table('2022_posts as p')
+        $postsTable = $this->tables->table('posts');
+        $postmetaTable = $this->tables->table('postmeta');
+        $termRelationshipsTable = $this->tables->table('term_relationships');
+        $termTaxonomyTable = $this->tables->table('term_taxonomy');
+        $termsTable = $this->tables->table('terms');
+
+        // Prefix tabel dan URL attachment selalu berasal dari resolver.
+        $query = $this->tables->connection()
+            ->table("{$postsTable} as p")
             ->select(
                 'p.ID',
                 'p.post_title',
                 'p.post_date',
                 'p.post_name as slug',
                 'p.post_content', // Diambil untuk generate excerpt
-                'img.guid as thumbnail_url', // URL Gambar Featured
+                'img_file.meta_value as thumbnail_path',
                 'terms.name as category_name', // Nama Kategori (Visual)
                 'terms.slug as category_slug'  // Slug Kategori (Untuk Filter)
             )
             // --- JOIN KE TABEL GAMBAR (FEATURED IMAGE) ---
             // Logic: Posts -> Postmeta (_thumbnail_id) -> Posts (Attachment)
-            ->leftJoin('2022_postmeta as pm', function ($join) {
+            ->leftJoin("{$postmetaTable} as pm", function ($join) {
                 $join->on('p.ID', '=', 'pm.post_id')
                     ->where('pm.meta_key', '_thumbnail_id');
             })
-            ->leftJoin('2022_posts as img', 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postsTable} as img", 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postmetaTable} as img_file", function ($join) {
+                $join->on('img.ID', '=', 'img_file.post_id')
+                    ->where('img_file.meta_key', '_wp_attached_file');
+            })
 
             // --- JOIN KE TABEL KATEGORI ---
             // Logic: Posts -> Term Relationships -> Term Taxonomy -> Terms
-            ->leftJoin('2022_term_relationships as tr', 'p.ID', '=', 'tr.object_id')
-            ->leftJoin('2022_term_taxonomy as tt', function ($join) {
+            ->leftJoin("{$termRelationshipsTable} as tr", 'p.ID', '=', 'tr.object_id')
+            ->leftJoin("{$termTaxonomyTable} as tt", function ($join) {
                 $join->on('tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
                     ->where('tt.taxonomy', 'category');
             })
-            ->leftJoin('2022_terms as terms', 'tt.term_id', '=', 'terms.term_id')
+            ->leftJoin("{$termsTable} as terms", 'tt.term_id', '=', 'terms.term_id')
 
             // --- FILTER WAJIB (Hanya Berita Terbit) ---
             ->where('p.post_status', 'publish')
@@ -85,7 +101,7 @@ class PostController extends Controller
                 'category' => $post->category_name ?? 'Umum',
                 'category_slug' => $post->category_slug ?? 'umum',
                 // Fix URL Gambar (Placeholder jika kosong)
-                'thumbnail' => $this->fixImageUrl($post->thumbnail_url),
+                'thumbnail' => $this->fixImageUrl($post->thumbnail_path),
                 // Buat cuplikan teks pendek dari konten
                 'excerpt' => $this->makeExcerpt($post->post_content),
             ];
@@ -113,21 +129,28 @@ class PostController extends Controller
      */
     public function showBySlug($slug)
     {
+        $postsTable = $this->tables->table('posts');
+        $postmetaTable = $this->tables->table('postmeta');
+        $usersTable = $this->tables->table('users');
+
         // 1. Fetch Main Post
-        $post = DB::connection('wordpress')
-            ->table('2022_posts as p')
+        $post = $this->tables->connection()
+            ->table("{$postsTable} as p")
             ->select(
                 'p.*',
-                'img.guid as thumbnail_url',
+                'img_file.meta_value as thumbnail_path',
                 'u.display_name as author_name' // Ambil nama author
             )
             // Join Gambar
-            ->leftJoin('2022_postmeta as pm', function ($join) {
+            ->leftJoin("{$postmetaTable} as pm", function ($join) {
                 $join->on('p.ID', '=', 'pm.post_id')->where('pm.meta_key', '_thumbnail_id');
             })
-            ->leftJoin('2022_posts as img', 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postsTable} as img", 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postmetaTable} as img_file", function ($join) {
+                $join->on('img.ID', '=', 'img_file.post_id')->where('img_file.meta_key', '_wp_attached_file');
+            })
             // Join Author
-            ->leftJoin('2022_users as u', 'p.post_author', '=', 'u.ID')
+            ->leftJoin("{$usersTable} as u", 'p.post_author', '=', 'u.ID')
             ->where('p.post_name', $slug)
             ->where('p.post_status', 'publish')
             ->first();
@@ -137,10 +160,10 @@ class PostController extends Controller
         }
 
         // 2. Fetch Categories & Tags belonging to this post
-        $terms = DB::connection('wordpress')
-            ->table('2022_term_relationships as tr')
-            ->join('2022_term_taxonomy as tt', 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
-            ->join('2022_terms as t', 'tt.term_id', '=', 't.term_id')
+        $terms = $this->tables->connection()
+            ->table($this->tables->table('term_relationships') . ' as tr')
+            ->join($this->tables->table('term_taxonomy') . ' as tt', 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
+            ->join($this->tables->table('terms') . ' as t', 'tt.term_id', '=', 't.term_id')
             ->where('tr.object_id', $post->ID)
             ->select('t.name', 't.slug', 'tt.taxonomy')
             ->get();
@@ -151,8 +174,7 @@ class PostController extends Controller
         // Ambil kategori utama untuk related posts
         $mainCategorySlug = $categories->first()->slug ?? 'umum';
 
-        // 3. Increment Views (Optional - Simpan di meta jika perlu, atau custom table)
-        // DB::connection('wordpress')->table('2022_postmeta')->updateOrInsert(...)
+        // Penghitung views tidak ditulis pada Fase 1 agar akses WordPress tetap read-only.
 
         // 4. Return Data
         return response()->json([
@@ -165,7 +187,7 @@ class PostController extends Controller
                 'author' => $post->author_name ?? 'Admin LPPM',
                 'categories' => $categories->map(fn($c) => ['name' => $c->name, 'slug' => $c->slug]),
                 'tags' => $tags->map(fn($t) => ['name' => $t->name, 'slug' => $t->slug]),
-                'image' => $this->fixImageUrl($post->thumbnail_url),
+                'image' => $this->fixImageUrl($post->thumbnail_path),
                 'content' => $this->cleanContent($post->post_content),
                 // Data Tambahan untuk Widget
                 'related_posts' => $this->getRelatedPosts($post->ID, $mainCategorySlug),
@@ -179,18 +201,27 @@ class PostController extends Controller
      */
     private function getRelatedPosts($currentId, $categorySlug)
     {
-        $posts = DB::connection('wordpress')
-            ->table('2022_posts as p')
-            ->select('p.ID', 'p.post_title', 'p.post_name as slug', 'p.post_date', 'img.guid as thumbnail_url')
+        $postsTable = $this->tables->table('posts');
+        $postmetaTable = $this->tables->table('postmeta');
+        $termRelationshipsTable = $this->tables->table('term_relationships');
+        $termTaxonomyTable = $this->tables->table('term_taxonomy');
+        $termsTable = $this->tables->table('terms');
+
+        $posts = $this->tables->connection()
+            ->table("{$postsTable} as p")
+            ->select('p.ID', 'p.post_title', 'p.post_name as slug', 'p.post_date', 'img_file.meta_value as thumbnail_path')
             // Join Gambar
-            ->leftJoin('2022_postmeta as pm', function ($join) {
+            ->leftJoin("{$postmetaTable} as pm", function ($join) {
                 $join->on('p.ID', '=', 'pm.post_id')->where('pm.meta_key', '_thumbnail_id');
             })
-            ->leftJoin('2022_posts as img', 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postsTable} as img", 'pm.meta_value', '=', 'img.ID')
+            ->leftJoin("{$postmetaTable} as img_file", function ($join) {
+                $join->on('img.ID', '=', 'img_file.post_id')->where('img_file.meta_key', '_wp_attached_file');
+            })
             // Join Category
-            ->join('2022_term_relationships as tr', 'p.ID', '=', 'tr.object_id')
-            ->join('2022_term_taxonomy as tt', 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
-            ->join('2022_terms as t', 'tt.term_id', '=', 't.term_id')
+            ->join("{$termRelationshipsTable} as tr", 'p.ID', '=', 'tr.object_id')
+            ->join("{$termTaxonomyTable} as tt", 'tr.term_taxonomy_id', '=', 'tt.term_taxonomy_id')
+            ->join("{$termsTable} as t", 'tt.term_id', '=', 't.term_id')
             ->where('t.slug', $categorySlug)
             ->where('p.post_status', 'publish')
             ->where('p.ID', '!=', $currentId) // Validasi exclude current post
@@ -205,7 +236,7 @@ class PostController extends Controller
                 'title' => $p->post_title,
                 'slug' => $p->slug,
                 'date' => date('d M Y', strtotime($p->post_date)),
-                'image' => $this->fixImageUrl($p->thumbnail_url)
+                'image' => $this->fixImageUrl($p->thumbnail_path)
             ];
         });
     }
@@ -215,8 +246,8 @@ class PostController extends Controller
      */
     private function getRecentPosts($currentId)
     {
-        $posts = DB::connection('wordpress')
-            ->table('2022_posts as p')
+        $posts = $this->tables->connection()
+            ->table($this->tables->table('posts') . ' as p')
             ->select('p.ID', 'p.post_title', 'p.post_name as slug', 'p.post_date')
             ->where('p.post_status', 'publish')
             ->where('p.post_type', 'post')
@@ -261,8 +292,11 @@ class PostController extends Controller
         // 3. Hapus tag paragraf kosong (&nbsp;)
         $clean = preg_replace('/<p>&nbsp;<\/p>/', '', $clean);
 
-        // 4. Perbaiki URL Gambar Relative (src="/wp-content...") menjadi Absolute
-        $clean = str_replace('src="/wp-content', 'src="https://lppm.unila.ac.id/wp-content', $clean);
+        // Perbaiki URL relatif legacy tanpa menanam domain ke kode.
+        $siteUrl = rtrim((string) config('services.wordpress.site_url', ''), '/');
+        if ($siteUrl !== '') {
+            $clean = str_replace('src="/wp-content', 'src="' . $siteUrl . '/wp-content', $clean);
+        }
 
         return $clean;
     }
@@ -281,25 +315,10 @@ class PostController extends Controller
     /**
      * Memperbaiki URL Gambar (HTTPS & Placeholder)
      */
-    private function fixImageUrl($url)
+    private function fixImageUrl(?string $relativePath): string
     {
-        // Jika tidak ada gambar, pakai placeholder
-        if (!$url) return 'https://placehold.co/600x400?text=No+Image';
-
-        // Jika URL relative (mulai dengan /), tambahkan domain
-        if (strpos($url, '/') === 0 && strpos($url, '//') !== 0) {
-            $url = 'https://lppm.unila.ac.id' . $url;
-        }
-
-        // Pastikan URL menggunakan HTTPS agar tidak diblokir browser modern
-        $url = str_replace('http://', 'https://', $url);
-
-        // Pastikan URL lengkap (ada http:// atau https://)
-        if (strpos($url, 'http://') !== 0 && strpos($url, 'https://') !== 0) {
-            $url = 'https://lppm.unila.ac.id' . $url;
-        }
-
-        return $url;
+        return $this->assets->publicUrl($relativePath)
+            ?? 'https://placehold.co/600x400?text=No+Image';
     }
     /**
      * MENAMPILKAN DAFTAR KATEGORI
@@ -307,9 +326,9 @@ class PostController extends Controller
      */
     public function categories()
     {
-        $categories = DB::connection('wordpress')
-            ->table('2022_terms as t')
-            ->join('2022_term_taxonomy as tt', 't.term_id', '=', 'tt.term_id')
+        $categories = $this->tables->connection()
+            ->table($this->tables->table('terms') . ' as t')
+            ->join($this->tables->table('term_taxonomy') . ' as tt', 't.term_id', '=', 'tt.term_id')
             ->where('tt.taxonomy', 'category')
             ->where('tt.count', '>', 0) // Hanya kategori yang ada isinya
             ->select('t.term_id', 't.name', 't.slug')

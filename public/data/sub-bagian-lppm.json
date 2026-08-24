@@ -1,631 +1,589 @@
 {
-  "metadata": {
-    "last_updated": "2025-12-01",
-    "data_source": "LPPM Unila Database",
-    "description": "Data lengkap sub bagian dan unit di LPPM Universitas Lampung"
-  },
-  "sub_bagian": {
-    "pui": {
-      "pusat-unggulan-ipteks-anggrek-kopi-lada-kako-dan-pengembangan-komoditas-strategis-dan-agroindustri-lampung": {
-        "nama": "Pusat Unggulan Ipteks (PUI) Anggrek, Kopi, Lada, Kako dan Pengembangan Komoditas Strategis dan Agroindustri Lampung",
-        "singkatan": "PUI Anggrek dan Kopi",
-        "kategori": "PUI",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Prof. Dr. Ir. Yusnita, M. Sc.",
-            "foto": "/images/sub-bagian/pui-anggrek-kopi/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+PUI+Anggrek+dan+Kopi",
-            "jabatan": "Ketua PUI",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat Unggulan Ipteks yang berfokus pada pengembangan komoditas strategis pertanian Lampung meliputi anggrek, kopi, lada, dan kako melalui riset inovatif dan pengembangan agroindustri berkelanjutan.",
-        "profil": {
-          "visi": "Menjadi pusat unggulan ipteks terdepan dalam pengembangan komoditas pertanian strategis Indonesia berbasis riset inovatif dan keunggulan kompetitif global.",
-          "misi": [
-            "Melaksanakan penelitian fundamental dan terapan unggul dalam pengembangan komoditas anggrek dan kopi",
-            "Mengembangkan inovasi teknologi budidaya berkelanjutan dan ramah lingkungan",
-            "Memfasilitasi hilirisasi hasil penelitian melalui pengembangan agroindustri",
-            "Membangun jejaring kerjasama nasional dan internasional untuk pengembangan ipteks",
-            "Memberdayakan masyarakat melalui diseminasi teknologi dan edukasi pertanian"
-          ]
-        },
-        "tugas_fungsi": [
-          "Melaksanakan pelatihan dan workshop peyusunan dokumen akreditasi internasional program studi.",
-          "Melakukan pendampingan penyusunan, simulasi, dan visitasi akreditasi internasional program studi.",
-          "Melakukan pendampingan surveillance/banding dari hasil draft acreditation report.",
-          "Menjadi pusat riset dan pengembangan teknologi budidaya dan pemuliaan anggrek dan Komoditas tanaman spesifik Propinsi Lampung.",
-          "Mendorong komersialisasi produk berbasis bioteknologi anggrek dan Komoditas tanaman spesifik Propinsi Lampung lainnnya.",
-          "Mengembangkan kerja sama dengan petani dan industri.",
-          "Meneliti dan mengembangkan teknologi peningkatan produktivitas dan kualitas komoditas strategis seperti kopi, lada, kakao, tebu, dan sawit berbasis pertanian presisi.",
-          "Mengembangkan inovasi teknologi pascapanen dan hilirisasi produk agroindustri untuk meningkatkan nilai tambah dan daya saing ekspor.",
-          "Mengkaji dampak perubahan iklim dan volatilitas harga terhadap komoditas perkebunan, serta merumuskan strategi mitigasi berbasis teknologi adaptif.",
-          "Meningkatkan efisiensi rantai pasok dan distribusi produk agroindustri melalui digitalisasi dan pemanfaatan teknologi berbasis IoT, big data analytics, dan blockchain.",
-          "Membangun kolaborasi strategis dengan petani, eksportir, industri, dan lembaga penelitian dalam penguatan standar produk berkelanjutan dan penerapan sertifikasi internasional.",
-          "Mendukung pengembangan ekosistem agroindustri berbasis inovasi dan keberlanjutan, termasuk model pertanian regeneratif dan agroforestry yang berdampak positif bagi lingkungan dan ekonomi petani."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/pui-anggrek-kopi/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+PUI+Anggrek+dan+Kopi"
-        }
-      }
+    "metadata": {
+        "last_updated": "2026-08-06",
+        "data_source": "Dokumen UPDATE WEBSITE versi 2",
+        "description": "Data Pusat LPPM Universitas Lampung sesuai pembaruan organisasi versi 2."
     },
-    "puslit": {
-      "pusat-penelitian-kuliah-kerja-nyata-kkn": {
-        "nama": "Pusat Penelitian KKN",
-        "singkatan": "Puslit KKN",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Diky Hidayat, S.Si., M.Sc",
-            "foto": "/images/sub-bagian/puslit-kkn/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+KKN",
-            "jabatan": "Kepala Pusat Penelitian KKN",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang menangani pelaksanaan dan pengembangan program Kuliah Kerja Nyata (KKN) sebagai wahana penerapan ilmu pengetahuan dan teknologi bagi mahasiswa untuk memberdayakan masyarakat.",
-        "profil": {
-          "visi": "Menjadi pusat pengembangan dan pelaksanaan KKN terdepan yang menghasilkan mahasiswa berkarakter, inovatif, dan berwawasan sosial untuk pembangunan berkelanjutan.",
-          "misi": [
-            "Menyelenggarakan program KKN reguler dan tematik berkualitas tinggi",
-            "Mengembangkan kurikulum KKN berbasis kompetensi dan kebutuhan masyarakat",
-            "Membangun jejaring mitra KKN yang luas dan berkualitas",
-            "Melakukan monitoring dan evaluasi berkelanjutan untuk peningkatan kualitas",
-            "Mendorong inovasi program KKN berbasis digital dan teknologi tepat guna"
-          ]
-        },
-        "tugas_fungsi": [
-          "Mengelola program KKN tematik berbasis riset dan kebutuhan masyarakat.",
-          "Meningkatkan dampak sosial dan ekonomi melalui program KKN berbasis pemberdayaan.",
-          "Menjalin kolaborasi dengan pemerintah dan sektor swasta dalam implementasi program.",
-          "Melaksanakan program program KKN Nasional, Kebangsaan, internasional dan Program KKN lainnya."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-kkn/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+KKN"
-        }
-      },
-      "pusat-penelitian-hak-kekayaan-intelektual-hki-dan-paten": {
-        "nama": "Pusat Penelitian HKI dan PATEN",
-        "singkatan": "Puslit HKI dan PATEN",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Dr. Ade arif Firmansyah, S.H., M.H",
-            "foto": "/images/sub-bagian/puslit-haki-paten/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+HKI+dan+Paten",
-            "jabatan": "Kepala Pusat Penelitian HKI dan Paten",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang berfungsi sebagai pusat layanan dan pengembangan proteksi kekayaan intelektual serta fasilitasi pendaftaran paten bagi peneliti dan dosen Universitas Lampung.",
-        "profil": {
-          "visi": "Menjadi pusat layanan HKI dan paten terdepan yang melindungi dan meningkatkan nilai ekonomi intelektual sivitas akademika untuk kemajuan bangsa.",
-          "misi": [
-            "Memberikan layanan konsultasi dan pendampingan HKI yang komprehensif",
-            "Memfasilitasi pendaftaran paten, merek, hak cipta, dan desain industri",
-            "Mengembangkan sistem manajemen HKI institusional yang terintegrasi",
-            "Melakukan sosialisasi dan edukasi perlindungan HKI kepada sivitas akademika",
-            "Membangun kerjasama dengan institusi HKI nasional dan internasional"
-          ]
-        },
-        "tugas_fungsi": [
-          "Meningkatkan kesadaran akademisi terkait perlindungan HKI, termasuk paten, hak cipta, dan merek dagang.",
-          "Mendampingi proses pendaftaran HKI untuk inovasi yang dihasilkan civitas akademika.",
-          "Menjalin kerja sama dengan industri untuk komersialisasi hasil riset.",
-          "Mengelola dan mengembangkan kebijakan HKI di lingkungan universitas."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-haki-paten/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+HKI+dan+Paten"
-        }
-      },
-      "pusat-penelitian-bencana-lingkungan-hidup-dan-sumber-daya-alam": {
-        "nama": "Pusat Penelitian Lingkungan Hidup dan Penanggulangan Bencana",
-        "singkatan": "Puslit LHPB",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Amril Ma'ruf Siregar. S.T.,M.T.",
-            "foto": "/images/sub-bagian/puslit-bencana-lingkungan/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+BLH+SDA",
-            "jabatan": "Kepala Pusat Penelitian Bencana dan Lingkungan",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat penelitian yang fokus pada kajian mitigasi bencana, konservasi lingkungan hidup, dan pengelolaan sumber daya alam berkelanjutan untuk mendukung pembangunan berwawasan lingkungan.",
-        "profil": {
-          "visi": "Menjadi pusat kajian mitigasi bencana dan kelestarian lingkungan terdepan yang menghasilkan solusi inovatif untuk pembangunan berkelanjutan.",
-          "misi": [
-            "Melaksanakan penelitian mitigasi dan adaptasi perubahan iklim",
-            "Mengembangkan sistem monitoring lingkungan dan sumber daya alam",
-            "Melakukan kajian dampak lingkungan dan sosial pembangunan",
-            "Memberikan rekomendasi kebijakan pengelolaan lingkungan berkelanjutan",
-            "Membangun kapasitas masyarakat dalam pengelolaan sumber daya alam"
-          ]
-        },
-        "tugas_fungsi": [
-          "Melakukan riset dan kajian kebijakan terkait aspek lingkungan hidup, perubahan iklim, dan ketahanan bencana.",
-          "Memantau kinerja keberlanjutan di lingkungan kampus, yang bertujuan untuk meningkatkan kesadaran dan mendorong praktik berkelanjutan di dunia pendidikan.",
-          "Mengembangkan strategi mitigasi dan adaptasi terhadap bencana alam serta degradasi lingkungan, berbasis teknologi dan kebijakan yang inklusif.",
-          "Mendorong advokasi dan pendampingan kebijakan keberlanjutan, bekerja sama dengan pemerintah, industri, dan organisasi masyarakat sipil dalam perumusan kebijakan berbasis sains.",
-          "Menginisiasi proyek-proyek sosial dan teknologi hijau berbasis SDGs, baik di lingkungan kampus maupun di masyarakat luas.",
-          "Menjalin kolaborasi dengan organisasi internasional dan nasional dalam pengembangan inovasi lingkungan dan kebencanaan, serta membuka peluang riset kolaboratif dan pendanaan internasional."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-bencana-lingkungan/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+BLH+SDA"
-        }
-      },
-      "pusat-penelitian-studi-kebijakan-publik-pembangunan-dan-sosial-budaya": {
-        "nama": "Pusat Penelitian Studi Kebijakan Publik, Pembangunan dan Sosial Budaya",
-        "singkatan": "Puslit Kebijakan Publik",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Gita Paramita Djausal, S. IP., M. B. A",
-            "foto": "/images/sub-bagian/puslit-kebijakan-publik/ketua.png",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Kebijakan+Publik",
-            "jabatan": "Kepala Pusat Studi Kebijakan Publik",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang menangani penelitian di bidang kebijakan publik, pembangunan ekonomi dan sosial, serta isu-isu sosial budaya relevan untuk pengembangan masyarakat.",
-        "profil": {
-          "visi": "Menjadi pusat kajian kebijakan publik terdepan yang menghasilkan rekomendasi berbasis data untuk pembangunan masyarakat berkelanjutan.",
-          "misi": [
-            "Melakukan analisis kebijakan publik dan dampaknya terhadap masyarakat",
-            "Meneliti isu-isu pembangunan ekonomi dan sosial",
-            "Mengkaji dinamika sosial budaya dalam konteks pembangunan",
-            "Memberikan rekomendasi kebijakan berbasis hasil penelitian",
-            "Melakukan publikasi ilmiah dan diseminasi hasil penelitian"
-          ]
-        },
-        "tugas_fungsi": [
-          "Melakukan kajian berkenaan dengan Kebijakan Publik, Pembangunana dan sosial budaya",
-          "Menganalisis dinamika Kebijakan Publik, Sosial budaya pada era globalisasi dan digitalisasi",
-          "Melakukan riset terkait kebijakan public, pembangunan, budaya lokal dalam konteks modernisasi dan keberlanjutan",
-          "Berkolaborasi dengan pemerintah dalam perumusan kebijakan  publik, Pembangunan dan sosial  budaya"
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-kebijakan-publik/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Kebijakan+Publik"
-        }
-      },
-      "pusat-penelitian-publikasi-dan-kerja-sama": {
-        "nama": "Pusat Penelitian Publikasi dan Kerjasama",
-        "singkatan": "Puslit Publikasi dan Kerjasama",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Gigih Forda Nama, S.T., M.T",
-            "foto": "/images/sub-bagian/puslit-publikasi-kerjasama/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Publikasi+dan+Kerjasama",
-            "jabatan": "Kepala Pusat Publikasi dan Kerjasama",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang mengelola publikasi ilmiah, jurnal, serta mengembangkan jaringan kerjasama penelitian dengan institusi nasional dan internasional.",
-        "profil": {
-          "visi": "Menjadi pusat publikasi ilmiah dan jaringan riset internasional terdepan yang meningkatkan reputasi dan visibilitas global Unila.",
-          "misi": [
-            "Mengelola publikasi ilmiah dan jurnal institusi berkualitas tinggi",
-            "Membangun jaringan kerjasama penelitian global yang strategis",
-            "Melakukan promosi dan diseminasi hasil penelitian berdampak",
-            "Mengelola database publikasi dan kekayaan intelektual terintegrasi",
-            "Menyelenggarakan konferensi ilmiah internasional berkualitas"
-          ]
-        },
-        "tugas_fungsi": [
-          "Mendorong peningkatan kuantitas dan kualitas publikasi ilmiah berbasis riset unggulan.",
-          "Menyediakan layanan pendampingan DOI/TURNITIN.",
-          "Menyediakan layanan pendampingan penulisan dan penyuntingan manuskrip.",
-          "Mengelola jurnal akademik dan memperluas jejaring dengan penerbit ilmiah.",
-          "Meningkatkan publikasi berbasis akses terbuka dan digitalisasi hasil penelitian.",
-          "Mengembangkan teknologi digital berbasis AI, blockchain, dan IoT untuk berbagai sektor.",
-          "Menjalin kerja sama dengan industri dalam pengembangan solusi berbasis Industry 4.0.",
-          "Mengoloa SINTA Score yang mendukung perangkingan dan kluster LPPM secara Nasional.",
-          "Meningkatkan efektivitas strategi komunikasi universitas, baik internal maupun eksternal, guna memperkuat branding institusi serta meningkatkan keterlibatan pemangku kepentingan.",
-          "Mendorong digitalisasi dalam layanan administrasi, termasuk penerapan teknologi informasi terkini dalam pengelolaan data dan proses bisnis UNILA LPPM.",
-          "Memperkuat jejaring dan kerjasama akademik, riset, dan industri, baik di tingkat nasional maupun internasional, guna mendukung program internasionalisasi universitas.",
-          "Memfasilitasi pengembangan program kemitraan strategis dengan lembaga pemerintah, industri, serta organisasi internasional untuk mendukung kolaborasi penelitian, pendidikan, dan inovasi.",
-          "Mengembangkan kebijakan dan standar pengelolaan sistem informasi, komunikasi, dan kerjasama, guna memastikan keberlanjutan dan efektivitas program yang dijalankan."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-publikasi-kerjasama/struktur-organisasi.png",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Publikasi+dan+Kerjasama"
-        }
-      },
-      "pusat-penelitian-inkubator-bisnis-hilirisasi-inovasi-ketahanan-pangan-dan-sertifikasi-halal": {
-        "nama": "Pusat Penelitian Inkubator Bisnis, Hilirisasi Inovasi, Ketahanan Pangan dan Sertifikasi Halal",
-        "singkatan": "Puslit Inkubator Bisnis",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Dr. Dewi Sartika, S.T.P., M.Si.",
-            "foto": "/images/sub-bagian/puslit-inkubator-bisnis/ketua.png",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Inkubator+Bisnis",
-            "jabatan": "Kepala Pusat Inkubator Bisnis dan Inovasi",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang mengembangkan inkubator bisnis, hilirisasi inovasi penelitian, ketahanan pangan, serta layanan sertifikasi halal untuk mendukung kemandirian ekonomi.",
-        "profil": {
-          "visi": "Menjadi pusat inkubasi bisnis dan hilirisasi inovasi terdepan yang menghasilkan usaha rintisan berkualitas dan berdaya saing global.",
-          "misi": [
-            "Mengelola program inkubasi bisnis dan startup berkualitas tinggi",
-            "Melakukan hilirisasi hasil inovasi penelitian ke produk komersial",
-            "Mengembangkan teknologi ketahanan pangan berbasis riset",
-            "Memberikan layanan sertifikasi halal dan keamanan pangan",
-            "Membangun ekosistem kewirausahaan di perguruan tinggi"
-          ]
-        },
-        "tugas_fungsi": [
-          "Mengembangkan ekosistem inovasi berbasis teknologi dan kewirausahaan.",
-          "Membantu mahasiswa dan dosen dalam inkubasi dan akselerasi startup berbasis riset.",
-          "Mendorong hilirisasi produk inovasi ke industri dan pasar.",
-          "Menyediakan program mentoring bisnis dan akses permodalan.",
-          "Mendukung pemberdayaan masyarakat melalui pengembangan ekonomi kreatif, inovasi sosial, dan diversifikasi produk lokal guna memperkuat daya saing ekonomi.",
-          "Berperan sebagai mitra pemerintah, industri, dan masyarakat lokal dalam menyusun strategi pembangunan ekonomi kreatif, berbasis destinasi unggulan ber-kearifan local dan berkelanjutan.",
-          "Mengembangkan inovasi teknologi pertanian berbasis smart farming untuk mendukung program kemandirian energi.",
-          "Berkolaborasi dengan petani dan UMKM dalam mengembangkan produk pangan inovatif untuk kemandirian pangan.",
-          "Layanan bagi pelaku usaha dan pemerintah dalam merealisasikan upaya jaminan produk halal serta memperkuat ekosistem halal sebagai wujud dari pelaksanaan Tri Dharma perguruan tinggi."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-inkubator-bisnis/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Inkubator+Bisnis"
-        }
-      },
-      "unila-halal-center": {
-        "nama": "Unila Halal Center",
-        "singkatan": "LPH Unila",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Dr. Dewi Sartika, S.T.P., M.Si.",
-            "foto": "/images/sub-bagian/unila-halal-center/ketua.png",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Unila+Halal+Center",
-            "jabatan": "Kepala Lembaga Pemeriksa Halal",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Lembaga Pemeriksa Halal (LPH) Universitas Lampung berada di bawah Pusat Inkubator Bisnis, Hilirisasi Inovasi, Ketahanan Pangan, dan Sertifikasi Halal LPPM Unila. LPH Unila menjalankan pemeriksaan dan pengujian kehalalan produk sesuai regulasi, sekaligus memperkuat ekosistem halal berbasis riset dan inovasi kampus. Hubungi kami melalui unila.halal.centre@kpa.unila.ac.id untuk layanan pemeriksaan halal.",
-        "profil": {
-          "visi": "Menjadi lembaga pemeriksa halal perguruan tinggi yang profesional, terpercaya, dan berbasis riset untuk menguatkan ekosistem halal nasional.",
-          "misi": [
-            "Memberikan layanan pemeriksaan dan pengujian kehalalan produk sesuai standar perundang-undangan.",
-            "Mengembangkan riset dan inovasi halal yang mendukung hilirisasi produk kampus dan mitra.",
-            "Meningkatkan kapasitas pelaku usaha melalui edukasi, asistensi, dan pendampingan sertifikasi halal.",
-            "Memperluas jejaring kolaborasi dengan regulator, industri, dan komunitas halal.",
-            "Menyediakan layanan konsultasi halal terpadu yang transparan dan akuntabel."
-          ]
-        },
-        "tugas_fungsi": [
-          "Melakukan pemeriksaan dan pengujian kehalalan produk secara profesional.",
-          "Memberikan rekomendasi teknis kepada BPJPH dan MUI terkait sertifikasi halal.",
-          "Mengembangkan modul edukasi dan pelatihan ekosistem halal berbasis riset.",
-          "Menjalin kolaborasi dengan industri untuk hilirisasi produk halal inovatif.",
-          "Menyediakan layanan konsultasi dan pendampingan sertifikasi halal terintegrasi."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/unila-halal-center/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Unila+Halal+Center"
-        }
-      },
-      "pusat-penelitian-manajeman-sistem-informasi-komunikasi-digitalisasi-dan-kaloborasi-riset": {
-        "nama": "Pusat Penelitian Manajeman Sistem Informasi, Komunikasi, Digitalisasi dan Kaloborasi Riset",
-        "singkatan": "Puslit Sistem Informasi",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Trisya Septiana, S.T., M.T,",
-            "foto": "/images/sub-bagian/puslit-sistem-informasi/ketua.png",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Sistem+Informasi",
-            "jabatan": "Kepala Pusat Sistem Informasi dan Digitalisasi",
-            "periode": "2024-2029"
-          },
-          "staff": [
-            {
-              "nama": "Rizkima Akbar Setiawan, S.T., M.T.",
-              "foto": "/images/sub-bagian/puslit-sistem-informasi/staff1.png",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+1",
-              "jabatan": "Staff",
-              "periode": "2024-2029"
-            },
-            {
-              "nama": "M. Nur Khawarizmi, S.Si., M.T.",
-              "foto": "/images/sub-bagian/puslit-sistem-informasi/staff2.png",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+2",
-              "jabatan": "Staff",
-              "periode": "2024-2029"
+    "sub_bagian": {
+        "administrasi": {
+            "bagian-umum": {
+                "nama": "Bagian Umum",
+                "singkatan": "Bagian Umum",
+                "kategori": "Administrasi",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Ahmad Suntara, S.Kom.",
+                        "foto": "/images/sub-bagian/bagian-umum/ketua.png",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Bagian+Umum",
+                        "jabatan": "Kepala Bagian Umum",
+                        "periode": "2024-2029"
+                    },
+                    "staff": [
+                        {
+                            "nama": "Yusrizal., S.P. MM.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff1.jpeg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Imam Wahyudi",
+                            "foto": "/images/sub-bagian/bagian-umum/staff2.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Abi Ilham Yurinza, S.IKom",
+                            "foto": "/images/sub-bagian/bagian-umum/staff3.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Resma Nurmei Winda. S.P.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff4.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Fertika Dwi Yoswita, S.Pd., M. Pd.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff5.jpeg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Titik Ovirosita",
+                            "foto": "/images/sub-bagian/bagian-umum/staff6.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Ridawati, S. Sos.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff7.jpeg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Sugianto",
+                            "foto": "/images/sub-bagian/bagian-umum/staff8.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Rizky Satria S.IP",
+                            "foto": "/images/sub-bagian/bagian-umum/staff9.jpeg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Saryanto",
+                            "foto": "/images/sub-bagian/bagian-umum/staff10.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Umum",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "A. Melky Oesman Nawawi, S.I.Kom",
+                            "foto": "/images/sub-bagian/bagian-umum/staff11.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Program dan Informasi",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Hafizh abdul aziz, S.H.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff12.jpeg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Program dan Informasi",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Ina Iriana, S.S.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff13.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Program dan Informasi",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Rosihin Anwar, S.Kom.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff14.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Program dan Informasi",
+                            "periode": "2024-2029"
+                        },
+                        {
+                            "nama": "Siti Marbiyah, S.Si.",
+                            "foto": "/images/sub-bagian/bagian-umum/staff15.jpg",
+                            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
+                            "jabatan": "Staf Program dan Informasi",
+                            "periode": "2024-2029"
+                        }
+                    ]
+                },
+                "profile_singkat": "Bagian Umum LPPM yang menangani administrasi umum, keuangan, kepegawaian, sarana prasarana, dan layanan pendukung lainnya untuk menunjang operasional LPPM.",
+                "profil": {
+                    "visi": "Menjadi unit pendukung operasional LPPM yang profesional, efektif, dan efisien dalam memberikan layanan administrasi terpadu.",
+                    "misi": [
+                        "Menyediakan layanan administrasi kepegawaian dan keuangan yang transparan",
+                        "Mengelola sarana prasarana dan fasilitas kantor secara optimal",
+                        "Melakukan pengadaan barang dan jasa sesuai peraturan berlaku",
+                        "Mengembangkan sistem informasi administrasi terintegrasi",
+                        "Menyelenggarakan layanan umum yang berkualitas untuk mendukung operasional LPPM"
+                    ]
+                },
+                "tugas_fungsi": [
+                    "Mengelola administrasi kepegawaian dan keuangan LPPM",
+                    "Menyediakan layanan sarana prasarana dan fasilitas kantor",
+                    "Melakukan pengadaan barang dan jasa",
+                    "Mengelola sistem informasi administrasi",
+                    "Menyelenggarakan layanan umum dan pendukung operasional"
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/bagian-umum/struktur-organisasi.jpg",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Bagian+Umum"
+                }
             }
-          ]
         },
-        "profile_singkat": "Pusat yang mengembangkan sistem informasi penelitian, digitalisasi layanan, serta memfasilitasi kolaborasi riset antar peneliti dan institusi.",
-        "profil": {
-          "visi": "Menjadi pusat pengembangan sistem informasi dan digitalisasi penelitian terdepan yang mendukung transformasi digital LPPM.",
-          "misi": [
-            "Mengembangkan sistem informasi penelitian terintegrasi",
-            "Melakukan digitalisasi layanan penelitian dan pengabdian",
-            "Membangun platform kolaborasi riset daring",
-            "Menyediakan layanan analisis data penelitian",
-            "Melakukan pengembangan sistem informasi manajemen pengetahuan"
-          ]
-        },
-        "tugas_fungsi": [
-          "Mengembangkan dan mengelola sistem informasi yang terintegrasi guna meningkatkan efisiensi tata kelola LPPM dalam mendukung one data Unila diantaranya: Website, Silemlit21, Media Sosial LPPM dan sistem Ploting Hibah Penelitian, PkM dan KKN serta sistem informasi Internaal lainnya yang menunjang kinerja di LPPM Unila",
-          "Mengelola sistem Informasi Internal dan eksternal berkenaan dengan hibah penelitian dan Pengabdian yang dikerjasamakan dengan Unila baik dengan kementerian Pendidikan Tinggi dan Ristek (SIBIMA, SIMLIBTABMAS), Kementerian Keuangan (eRISPRO LPDP) dengan Industri diantaranya  BPDPKS dan grand Riset lainnya, BRIN dan Kerjasama lainnya.",
-          "Mengelola data base penelitian, Pengabdian, HKI, Paten ,KKN dan Data lainya yang ada di LPPM Unila guna menunjang kinerja Unila.",
-          "Meningkatkan efektivitas strategi komunikasi LPPM, baik internal maupun eksternal, guna memperkuat branding institusi serta meningkatkan keterlibatan pemangku kepentingan.",
-          "Menyediakan dukungan teknis dan inovasi dalam pengelolaan sistem informasi dan komunikasi, termasuk pengelolaan website, media sosial, serta platform digital lainnya."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-sistem-informasi/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Sistem+Informasi"
-        }
-      },
-      "pusat-penelitian-sd-gs-pengembangan-wilayah-kemaritiman-dan-perdesaan": {
-        "nama": "Pusat Penelitian SDGs, Pengembangan Wilayah, Kemaritiman, dan Perdesaan",
-        "singkatan": "Puslit SDGs",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Dr. Henky Mayaguezz S.Pi., M.T.",
-            "foto": "/images/sub-bagian/puslit-sdgs/ketua.jpg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+SDGs",
-            "jabatan": "Kepala Pusat Penelitian SDGs",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang fokus pada penelitian berbasis Sustainable Development Goals (SDGs), pengembangan wilayah, isu kemaritiman, dan pembangunan perdesaan berkelanjutan.",
-        "profil": {
-          "visi": "Menjadi pusat riset SDGs terdepan yang menghasilkan solusi inovatif untuk pembangunan berkelanjutan Indonesia 2045.",
-          "misi": [
-            "Melakukan penelitian berbasis SDGs untuk pembangunan berkelanjutan",
-            "Mengembangkan model pengembangan wilayah dan perdesaan",
-            "Meneliti isu-isu kemaritiman dan sumber daya pesisir",
-            "Memberikan rekomendasi kebijakan pembangunan berkelanjutan",
-            "Membangun jejaring mitra SDGs dan pengembangan wilayah"
-          ]
-        },
-        "tugas_fungsi": [
-          "Menginisiasi proyek-proyek sosial dan teknologi hijau berbasis SDGs, baik di lingkungan kampus maupun di masyarakat luas.",
-          "Melakukan riset dan kajian kebijakan terkait pencapaian SDGs.",
-          "Mengintegrasikan prinsip SDGs dalam kurikulum, penelitian, dan pengabdian kepada masyarakat, guna memperkuat peran akademik dalam pembangunan berkelanjutan.",
-          "Memantau dan meng udpadte  UI Green Metric ",
-          "Mendorong advokasi dan pendampingan kebijakan keberlanjutan khusunya berkaitan denngan SDGs bekerja sama dengan pemerintah, industri, dan organisasi masyarakat sipil dalam perumusan kebijakan berbasis sains.",
-          "Menjalin kolaborasi dengan organisasi internasional dan nasional dalam pengembangan inovasi SDG",
-          "Melakukan riset berbasis kebijakan terkait pembangunan wilayah, pengelolaan sumber daya maritim dan perdesaan.",
-          "Mengembangkan inovasi teknologi untuk meningkatkan produktivitas sektor kelautan, perikanan dan wilayah pedesaan.",
-          "Menganalisis dan merancang strategi perencanaan tata ruang wilayah yang berkelanjutan, khususnya untuk kawasan pesisir, pulau-pulau kecil, dan perdesaan."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-sdgs/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+SDGs"
-        }
-      },
-      "pusat-penelitian-kemandirian-energi-kelistrikan-dan-material-maju": {
-        "nama": "Pusat Penelitian Kemandirian Energi, Kelistrikan dan Material Maju",
-        "singkatan": "Puslit Energi dan Material",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Khairudin, S.T., M.T., PhD Eng",
-            "foto": "/images/sub-bagian/puslit-energi-material/ketua.jpeg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Energi+dan+Material",
-            "jabatan": "Kepala Pusat Energi dan Material Maju",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang mengembangkan penelitian di bidang energi terbarukan, kelistrikan, dan material maju untuk mendukung kemandirian energi dan kemajuan teknologi.",
-        "profil": {
-          "visi": "Menjadi pusat riset energi dan material terdepan yang menghasilkan inovasi teknologi untuk kemandirian energi nasional.",
-          "misi": [
-            "Mengembangkan teknologi energi terbarukan dan efisiensi energi",
-            "Melakukan penelitian sistem kelistrikan dan smart grid",
-            "Meneliti material maju untuk berbagai aplikasi",
-            "Membangun prototipe energi berbasis lokal",
-            "Kerjasama industri untuk hilirisasi teknologi energi"
-          ]
-        },
-        "tugas_fungsi": [
-          "Meneliti dan mengembangkan potensi sumber energi baru dan terbarukan, guna mengurangi ketergantungan pada energi fosil dan meningkatkan ketahanan energi dan kelistrikan.",
-          "Mengembangkan teknologi hijau berbasis energi baru terbarukan.",
-          "Mengembangkan inovasi material maju untuk meningkatkan efisiensi energi, tkelistrikan ermasuk material untuk baterai, penyimpanan hidrogen, dan fotovoltaik berkinerja tinggi.",
-          "Menganalisis kebijakan energi, dan kelistrikan dan dampaknya terhadap keberlanjutan lingkungan, sosial, serta perekonomian nasional.",
-          "Mendorong adopsi teknologi energi terbarukan di masyarakat melalui proyek percontohan dan model bisnis berbasis energi hijau.",
-          "Berkolaborasi dengan pemerintah, industri, dan institusi akademik dalam pengembangan teknologi serta percepatan transisi energi hijau di Indonesia"
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-energi-material/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Energi+dan+Material"
-        }
-      },
-      "pusat-penelitian-ekonomi-kreatif-pariwisata-dan-perpajakan-berkelanjutan": {
-        "nama": "Pusat Penelitian Ekonomi Kreatif, Pariwisata, dan Perpajakan Berkelanjutan",
-        "singkatan": "Puslit Ekonomi Kreatif",
-        "kategori": "PUSLIT",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Fajrin Satria Dwi Kesumah, S.E., M.FBE.",
-            "foto": "/images/sub-bagian/puslit-ekonomi-kreatif/ketua.jpeg",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Ketua+Puslit+Ekonomi+Kreatif",
-            "jabatan": "Kepala Pusat Ekonomi Kreatif dan Pariwisata",
-            "periode": "2024-2029"
-          }
-        },
-        "profile_singkat": "Pusat yang menangani penelitian di bidang ekonomi kreatif, pengembangan pariwisata, serta sistem perpajakan yang berkelanjutan untuk mendukung pertumbuhan ekonomi.",
-        "profil": {
-          "visi": "Menjadi pusat riset ekonomi kreatif dan pariwisata terdepan yang menghasilkan inovasi untuk pertumbuhan ekonomi inklusif.",
-          "misi": [
-            "Mengembangkan model ekonomi kreatif berbasis lokal",
-            "Melakukan penelitian pengembangan pariwisata berkelanjutan",
-            "Meneliti sistem perpajakan dan kebijakan fiskal",
-            "Membangun jejaring dengan pelaku ekonomi kreatif",
-            "Memberikan rekomendasi kebijakan pengembangan ekonomi kreatif"
-          ]
-        },
-        "tugas_fungsi": [
-          "Menyusun dan mengimplementasikan program riset tahunan di bidang ekonomi kreatif, pariwisata, dan perpajakan.",
-          "Mengembangkan basis data potensi ekonomi kreatif dan destinasi pariwisata lokal yang terintegrasi.",
-          "Menyediakan layanan Tax Center sebagai pusat literasi perpajakan di lingkungan kampus dan masyarakat.",
-          "Menjalin kemitraan strategis dengan pemerintah, dunia usaha, dan komunitas dalam pengembangan proyek pariwisata dan ekonomi kreatif.",
-          "Melakukan riset interdisipliner di bidang ekonomi kreatif, pariwisata berkelanjutan, perpajakan, dan investasi lokal-regional.",
-          "Memberikan layanan konsultasi dan edukasi perpajakan bagi mahasiswa, dosen, pelaku UMKM, dan masyarakat umum sebagai bentuk pengabdian dan mitra strategis.",
-          "Mendorong penguatan UMKM dan komunitas kreatif berbasis budaya dan teknologi melalui inkubasi usaha, riset pasar, dan pemetaan potensi wisata.",
-          "Menyusun skema investasi jangka pendek dan menengah di sektor pariwisata dan ekonomi kreatif yang selaras dengan prinsip keberlanjutan dan pelestarian lingkungan."
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/puslit-ekonomi-kreatif/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Puslit+Ekonomi+Kreatif"
-        }
-      }
-    },
-    "administrasi": {
-      "bagian-umum": {
-        "nama": "Bagian Umum",
-        "singkatan": "Bagian Umum",
-        "kategori": "Administrasi",
-        "pimpinan": {
-          "ketua": {
-            "nama": "Ahmad Suntara, S.Kom.",
-            "foto": "/images/sub-bagian/bagian-umum/ketua.png",
-            "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Bagian+Umum",
-            "jabatan": "Kepala Bagian Umum",
-            "periode": "2024-2029"
-          },
-          "staff": [
-            {
-              "nama": "Yusrizal., S.P. MM.",
-              "foto": "/images/sub-bagian/bagian-umum/staff1.jpeg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+        "pusat-lppm": {
+            "pusat-unggulan-anggrek": {
+                "nama": "Pusat Unggulan Anggrek",
+                "singkatan": "Pusat Anggrek",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Prof. Dr. Ir. Yusnita, M.Sc.",
+                        "foto": "/images/sub-bagian/pusat-lppm/anggrek.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Unggulan Anggrek",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Unggulan Anggrek mempunyai tugas melaksanakan riset dan pengembangan teknologi anggrek.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Menjadi pusat riset dan pengembangan teknologi budidaya dan pemuliaan anggrek.",
+                    "Mendorong komersialisasi produk berbasis bioteknologi anggrek.",
+                    "Mengembangkan kerja sama pengembangan teknologi budidaya dan pemuliaan anggrek."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Imam Wahyudi",
-              "foto": "/images/sub-bagian/bagian-umum/staff2.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-unggulan-komoditas-strategis": {
+                "nama": "Pusat Unggulan Komoditas Strategis",
+                "singkatan": "Pusat Komoditas Strategis",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Dewi Sartika, S.T.P., M.Si.",
+                        "foto": "/images/sub-bagian/pusat-lppm/komoditas-strategis.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Unggulan Komoditas Strategis",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Unggulan Komoditas Strategis mempunyai tugas melaksanakan riset dan pengembangan teknologi komoditas strategis agroindustri Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Menjadi pusat riset dan pengembangan teknologi budidaya dan pemuliaan komoditas tanaman strategis dan spesifik Provinsi Lampung.",
+                    "Mendorong komersialisasi produk berbasis bioteknologi komoditas tanaman spesifik Provinsi Lampung lainnya.",
+                    "Mengembangkan kerja sama dengan petani dan industri.",
+                    "Meneliti dan mengembangkan teknologi peningkatan produktivitas dan kualitas komoditas strategis seperti kopi, lada, kakao, tebu, dan sawit berbasis pertanian presisi.",
+                    "Mengembangkan inovasi teknologi pascapanen dan hilirisasi produk agroindustri untuk meningkatkan nilai tambah dan daya saing ekspor.",
+                    "Mengkaji dampak perubahan iklim dan volatilitas harga terhadap komoditas perkebunan serta merumuskan strategi mitigasi berbasis teknologi adaptif.",
+                    "Meningkatkan efisiensi rantai pasok dan distribusi produk agroindustri melalui digitalisasi dan pemanfaatan teknologi berbasis IoT, big data analytics, dan blockchain.",
+                    "Membangun kolaborasi strategis dengan petani, eksportir, industri, dan lembaga penelitian dalam penguatan standar produk berkelanjutan dan penerapan sertifikasi internasional.",
+                    "Mendukung pengembangan ekosistem agroindustri berbasis inovasi dan keberlanjutan, termasuk model pertanian regeneratif dan agroforestri yang berdampak positif bagi lingkungan dan ekonomi petani."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Abi Ilham Yurinza, S.IKom",
-              "foto": "/images/sub-bagian/bagian-umum/staff3.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-cassava": {
+                "nama": "Pusat Cassava",
+                "singkatan": "Pusat Cassava",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Agung Kusuma Wijaya, S.Pt., M.P.",
+                        "foto": "/images/sub-bagian/pusat-lppm/cassava.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Cassava",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Cassava mempunyai tugas melaksanakan riset dan pengembangan teknologi cassava.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Menjadi pusat riset dan pengembangan teknologi perbenihan dan budidaya cassava.",
+                    "Mendorong komersialisasi produk berbasis cassava.",
+                    "Mengembangkan kerja sama pengembangan teknologi budidaya cassava."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Resma Nurmei Winda. S.P.",
-              "foto": "/images/sub-bagian/bagian-umum/staff4.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-publikasi-ilmiah": {
+                "nama": "Pusat Publikasi Ilmiah",
+                "singkatan": "Pusat Publikasi",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Ir. Gigih Forda Nama, S.T., M.T.I., IPM.",
+                        "foto": "/images/sub-bagian/pusat-lppm/publikasi-ilmiah.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Publikasi Ilmiah",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Publikasi Ilmiah mempunyai tugas melaksanakan pengelolaan publikasi ilmiah Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Meningkatkan kuantitas dan kualitas publikasi ilmiah yang bersumber dari riset unggulan Universitas Lampung.",
+                    "Mengelola layanan DOI dan TURNITIN untuk mendukung integritas publikasi ilmiah.",
+                    "Menyelenggarakan pendampingan penulisan dan penyuntingan artikel ilmiah bagi dosen dan peneliti.",
+                    "Mengelola jurnal ilmiah Universitas Lampung serta membangun jejaring dengan penerbit nasional dan internasional.",
+                    "Mendorong akses terbuka dan digitalisasi publikasi ilmiah.",
+                    "Mengembangkan pemanfaatan teknologi digital, termasuk AI, blockchain, dan IoT, untuk mendukung publikasi dan diseminasi hasil riset.",
+                    "Membangun kerja sama dengan industri dan pemangku kepentingan untuk mendukung publikasi berbasis kebutuhan Industri 4.0.",
+                    "Mengelola data SINTA untuk mendukung pemeringkatan dan peningkatan klaster LPPM secara nasional."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Fertika Dwi Yoswita, S.Pd., M. Pd.",
-              "foto": "/images/sub-bagian/bagian-umum/staff5.jpeg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-data-dan-informasi": {
+                "nama": "Pusat Data dan Informasi",
+                "singkatan": "Pusat Data dan Informasi",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Ir. Trisya Septiana, S.T., M.T., IPM.",
+                        "foto": "/images/sub-bagian/pusat-lppm/data-informasi.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Data dan Informasi",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Data dan Informasi mempunyai tugas melaksanakan pengelolaan data dan informasi LPPM Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Menyediakan dan memperbarui data penelitian dan pengabdian kepada masyarakat.",
+                    "Melaksanakan digitalisasi pengelolaan data LPPM.",
+                    "Mengelola basis data penelitian, pengabdian, kekayaan intelektual, KKN, dan kegiatan LPPM lainnya.",
+                    "Menyusun strategi komunikasi dan penguatan citra LPPM.",
+                    "Mendukung pengelolaan sistem informasi, situs web, media sosial, dan platform digital LPPM.",
+                    "Menyebarluaskan informasi LPPM melalui media digital dan non-digital.",
+                    "Mengoordinasikan kebutuhan data dan informasi dengan unit kerja lain."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Titik Ovirosita",
-              "foto": "/images/sub-bagian/bagian-umum/staff6.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-hak-kekayaan-intelektual": {
+                "nama": "Pusat Hak Kekayaan Intelektual",
+                "singkatan": "Pusat HKI",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Ade Arif Firmansyah, S.H., M.H.",
+                        "foto": "/images/sub-bagian/pusat-lppm/hak-kekayaan-intelektual.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Hak Kekayaan Intelektual",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Hak Kekayaan Intelektual mempunyai tugas melaksanakan pengelolaan kekayaan intelektual Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Meningkatkan kesadaran sivitas akademika mengenai perlindungan kekayaan intelektual.",
+                    "Memberikan pendampingan pendaftaran dan perlindungan kekayaan intelektual.",
+                    "Membangun kerja sama dengan industri untuk komersialisasi kekayaan intelektual.",
+                    "Menyusun dan mengembangkan kebijakan pengelolaan kekayaan intelektual Universitas Lampung."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Ridawati, S. Sos.",
-              "foto": "/images/sub-bagian/bagian-umum/staff7.jpeg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-kuliah-kerja-nyata": {
+                "nama": "Pusat Kuliah Kerja Nyata",
+                "singkatan": "Pusat KKN",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Diky Hidayat, S.Si., M.Sc.",
+                        "foto": "/images/sub-bagian/pusat-lppm/kuliah-kerja-nyata.jpg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Kuliah Kerja Nyata",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Kuliah Kerja Nyata mempunyai tugas melaksanakan pengelolaan Kuliah Kerja Nyata Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Mengelola program KKN tematik berbasis riset dan kebutuhan masyarakat.",
+                    "Meningkatkan dampak sosial dan ekonomi melalui program KKN berbasis pemberdayaan.",
+                    "Menjalin kolaborasi dengan pemerintah dan sektor swasta dalam implementasi program.",
+                    "Melaksanakan program KKN Nasional, KKN Kebangsaan, KKN internasional, dan program KKN lainnya."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Sugianto",
-              "foto": "/images/sub-bagian/bagian-umum/staff8.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-halal": {
+                "nama": "Pusat Halal",
+                "singkatan": "Pusat Halal",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Gita Paramita Djausal, S.IP., M.B.A.",
+                        "foto": "/images/sub-bagian/pusat-lppm/halal.png",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Halal",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Halal mempunyai tugas melaksanakan penyediaan, pelayanan kajian, dan pengelolaan halal.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Memberikan pelayanan kepada pelaku usaha dan pemerintah dalam bidang jaminan produk halal.",
+                    "Melaksanakan kajian ilmiah mengenai jaminan produk halal.",
+                    "Menyelenggarakan pelatihan auditor halal, penyelia halal, dan pendamping proses produk halal.",
+                    "Menyelenggarakan lokakarya, seminar, sertifikasi, dan literasi halal.",
+                    "Membangun kerja sama dengan pemerintah, industri, BPJPH, lembaga pemeriksa dan sertifikasi halal, serta perguruan tinggi."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Rizky Satria S.IP",
-              "foto": "/images/sub-bagian/bagian-umum/staff9.jpeg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-inkubator-bisnis-inovasi-dan-hilirisasi": {
+                "nama": "Pusat Inkubator Bisnis, Inovasi, dan Hilirisasi",
+                "singkatan": "Pusat Inkubator Bisnis",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Fajrin Satria Dwi Kesumah, S.E., FBE.",
+                        "foto": "/images/sub-bagian/pusat-lppm/inkubator-bisnis.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Inkubator Bisnis, Inovasi, dan Hilirisasi",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Inkubator Bisnis, Inovasi, dan Hilirisasi mempunyai tugas melaksanakan pengelolaan inkubator bisnis dan hilirisasi inovasi Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Membangun ekosistem inovasi dan kewirausahaan di lingkungan Universitas Lampung.",
+                    "Mendampingi mahasiswa dan dosen dalam proses inkubasi usaha dan pengembangan startup.",
+                    "Mendorong hilirisasi hasil riset dan inovasi ke industri dan pasar.",
+                    "Menyediakan layanan mentoring, jejaring, dan akses permodalan bagi tenant.",
+                    "Mengembangkan ekonomi kreatif, inovasi sosial, dan diversifikasi produk berbasis potensi lokal.",
+                    "Membangun kemitraan untuk pengembangan ekonomi kreatif dan desa unggulan.",
+                    "Mengembangkan teknologi yang mendukung kemandirian energi.",
+                    "Membangun kolaborasi dengan petani dan UMKM dalam penerapan inovasi."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Saryanto",
-              "foto": "/images/sub-bagian/bagian-umum/staff10.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Umum",
-              "periode": "2024-2029"
+            "pusat-sustainable-development-goals": {
+                "nama": "Pusat Sustainable Development Goals (SDGs)",
+                "singkatan": "Pusat SDGs",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Henky Mayaquezz, S.Pi., M.T., M.Sc.",
+                        "foto": "/images/sub-bagian/pusat-lppm/sdgs.jpg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Sustainable Development Goals (SDGs)",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Sustainable Development Goals mempunyai tugas melaksanakan riset dan pengelolaan SDGs Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Mengembangkan proyek sosial dan teknologi hijau yang mendukung pencapaian SDGs.",
+                    "Melaksanakan riset terkait pencapaian indikator SDGs.",
+                    "Mengintegrasikan SDGs dalam kurikulum, penelitian, dan pengabdian kepada masyarakat.",
+                    "Memantau dan memperbarui data UI GreenMetric Universitas Lampung.",
+                    "Melaksanakan advokasi kebijakan berbasis SDGs.",
+                    "Membangun kolaborasi nasional dan internasional dalam implementasi SDGs."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "A. Melky Oesman Nawawi, S.I.Kom",
-              "foto": "/images/sub-bagian/bagian-umum/staff11.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Program dan Informasi",
-              "periode": "2024-2029"
+            "pusat-pengembangan-riset-strategis": {
+                "nama": "Pusat Pengembangan Riset Strategis",
+                "singkatan": "Pusat Riset Strategis",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Eng. Ir. Khairudin, S.T., M.Sc.",
+                        "foto": "/images/sub-bagian/pusat-lppm/riset-strategis.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Pengembangan Riset Strategis",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Pengembangan Riset Strategis mempunyai tugas melaksanakan riset dan pengembangan kajian strategis Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Melaksanakan riset kebijakan strategis pada bidang energi bersih, ekonomi hijau, teknologi digital, sosial budaya Lampung, hukum dan perlindungan perempuan dan anak, kemaritiman dan lingkungan, dana abadi, kesehatan, serta ketahanan pangan.",
+                    "Mengembangkan program riset strategis yang menjawab kebutuhan pembangunan daerah, nasional, dan global.",
+                    "Menginisiasi proyek riset multidisiplin pada isu strategis dan prioritas pembangunan.",
+                    "Membangun kolaborasi riset dengan pemerintah, industri, masyarakat, dan mitra nasional maupun internasional."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Hafizh abdul aziz, S.H.",
-              "foto": "/images/sub-bagian/bagian-umum/staff12.jpeg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Program dan Informasi",
-              "periode": "2024-2029"
+            "pusat-pengabdian-dan-inovasi-sosial": {
+                "nama": "Pusat Pengabdian dan Inovasi Sosial",
+                "singkatan": "Pusat Pengabdian dan Inovasi Sosial",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "Dr. Ryzal Perdana, S.Pd., M.Pd.",
+                        "foto": "/images/sub-bagian/pusat-lppm/pengabdian-inovasi-sosial.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Pengabdian dan Inovasi Sosial",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Pengabdian dan Inovasi Sosial mempunyai tugas melaksanakan penguatan pengabdian strategis Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Melaksanakan pengabdian strategis berbasis teknologi, pendidikan, kesehatan, ketahanan pangan, dan pemberdayaan masyarakat.",
+                    "Mengembangkan program pengabdian dan inovasi sosial berdasarkan kebutuhan lokal dan tantangan global.",
+                    "Membangun kolaborasi pengabdian dengan pemerintah, industri, komunitas, dan mitra nasional maupun internasional.",
+                    "Menginisiasi model pengabdian berkelanjutan yang terukur dampaknya bagi masyarakat."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             },
-            {
-              "nama": "Ina Iriana, S.S.",
-              "foto": "/images/sub-bagian/bagian-umum/staff13.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Program dan Informasi",
-              "periode": "2024-2029"
-            },
-            {
-              "nama": "Rosihin Anwar, S.Kom.",
-              "foto": "/images/sub-bagian/bagian-umum/staff14.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Program dan Informasi",
-              "periode": "2024-2029"
-            },
-            {
-              "nama": "Siti Marbiyah, S.Si.",
-              "foto": "/images/sub-bagian/bagian-umum/staff15.jpg",
-              "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Staff+Umum",
-              "jabatan": "Staf Program dan Informasi",
-              "periode": "2024-2029"
+            "pusat-digitalisasi-dan-kemitraan-global": {
+                "nama": "Pusat Digitalisasi dan Kemitraan Global",
+                "singkatan": "Pusat Digitalisasi dan Kemitraan Global",
+                "kategori": "Pusat LPPM",
+                "pimpinan": {
+                    "ketua": {
+                        "nama": "M. Iqbal Parabi, S.Si., M.T.",
+                        "foto": "/images/sub-bagian/pusat-lppm/digitalisasi-kemitraan-global.jpeg",
+                        "placeholder": "https://via.placeholder.com/400x400/105091/ffffff?text=Kepala+Pusat+LPPM",
+                        "jabatan": "Kepala Pusat Digitalisasi dan Kemitraan Global",
+                        "periode": ""
+                    }
+                },
+                "profile_singkat": "Pusat Digitalisasi dan Kemitraan Global mempunyai tugas melaksanakan pengelolaan sistem dan kemitraan strategis LPPM Universitas Lampung.",
+                "profil": {
+                    "visi": "",
+                    "misi": [],
+                    "program_unggulan": [],
+                    "prestasi": [],
+                    "keunggulan": []
+                },
+                "tugas_fungsi": [
+                    "Mengembangkan sistem informasi terintegrasi dan kebijakan satu data, termasuk situs web, Silemlit21, media sosial, dan sistem plotting.",
+                    "Mengembangkan sistem internal dan eksternal untuk mendukung pengelolaan hibah kementerian dan industri.",
+                    "Membangun jejaring dan kemitraan penelitian serta pengabdian pada tingkat nasional dan internasional.",
+                    "Mengembangkan kemitraan strategis dengan pemerintah, industri, perguruan tinggi, dan organisasi internasional."
+                ],
+                "struktur_organisasi": {
+                    "gambar_struktur": "/images/sub-bagian/pusat-lppm/struktur-organisasi.png",
+                    "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Pusat+LPPM"
+                }
             }
-          ]
-        },
-        "profile_singkat": "Bagian Umum LPPM yang menangani administrasi umum, keuangan, kepegawaian, sarana prasarana, dan layanan pendukung lainnya untuk menunjang operasional LPPM.",
-        "profil": {
-          "visi": "Menjadi unit pendukung operasional LPPM yang profesional, efektif, dan efisien dalam memberikan layanan administrasi terpadu.",
-          "misi": [
-            "Menyediakan layanan administrasi kepegawaian dan keuangan yang transparan",
-            "Mengelola sarana prasarana dan fasilitas kantor secara optimal",
-            "Melakukan pengadaan barang dan jasa sesuai peraturan berlaku",
-            "Mengembangkan sistem informasi administrasi terintegrasi",
-            "Menyelenggarakan layanan umum yang berkualitas untuk mendukung operasional LPPM"
-          ]
-        },
-        "tugas_fungsi": [
-          "Mengelola administrasi kepegawaian dan keuangan LPPM",
-          "Menyediakan layanan sarana prasarana dan fasilitas kantor",
-          "Melakukan pengadaan barang dan jasa",
-          "Mengelola sistem informasi administrasi",
-          "Menyelenggarakan layanan umum dan pendukung operasional"
-        ],
-        "struktur_organisasi": {
-          "gambar_struktur": "/images/sub-bagian/bagian-umum/struktur-organisasi.jpg",
-          "gambar_placeholder": "https://via.placeholder.com/1200x800/f0f9ff/105091?text=Struktur+Organisasi+Bagian+Umum"
         }
-      }
     }
-  }
 }
